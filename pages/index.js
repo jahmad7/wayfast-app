@@ -72,14 +72,8 @@ export default function Home() {
                 className="h-24 w-auto sm:h-24"
               />
               <div className="flex flex-row items-center">
-                <p className="my-8 text-3xl font-bold text-white  text-center w-min mx-auto  rounded-2xl px-7 py-4 bg-wayfastGreen">
-                  1
-                </p>
                 <div className="h-1 bg-wayfastGreen" />
               </div>
-              <h3 className="pt-4 text-center  mb-6  text-black text-3xl font-medium tracking-widest">
-                Tap to Weigh
-              </h3>
             </div>
             <div className="flex flex-col">
               <img
@@ -88,12 +82,6 @@ export default function Home() {
                 objectPosition="center"
                 className="h-24 w-auto sm:h-24"
               />
-              <p className="my-8 text-3xl font-bold text-white  text-center w-min mx-auto  rounded-2xl px-7 py-4 bg-wayfastGreen">
-                2
-              </p>
-              <h3 className="pt-4 text-center  mb-6  text-black text-3xl font-medium tracking-widest">
-                Remove & Repeat
-              </h3>
             </div>
             <div className="flex flex-col">
               <img
@@ -102,9 +90,26 @@ export default function Home() {
                 objectPosition="center"
                 className="h-24 w-auto sm:h-24"
               />
-              <p className="my-8 text-3xl font-bold text-white  text-center w-min mx-auto  rounded-2xl px-7 py-4 bg-wayfastGreen">
-                3
-              </p>
+            </div>
+            <div className="col-span-3 mx-40 mt-2">
+              <img
+                src="/steps_desk.svg"
+                alt="Picture of the author"
+                objectPosition="center"
+                className="h-24 w-full sm:h-24 "
+              />
+            </div>
+            <div className="flex flex-col">
+              <h3 className="pt-4 text-center  mb-6  text-black text-3xl font-medium tracking-widest">
+                Tap to Weigh
+              </h3>
+            </div>
+            <div className="flex flex-col">
+              <h3 className="pt-4 text-center  mb-6  text-black text-3xl font-medium tracking-widest">
+                Remove & Repeat
+              </h3>
+            </div>
+            <div className="flex flex-col">
               <h3 className="pt-4 text-center  mb-6  text-black text-3xl font-medium tracking-widest">
                 Export Data
               </h3>
@@ -126,13 +131,36 @@ export default function Home() {
           </h1>
           <ul className="grid grid-cols-1 gap-6  lg:grid-cols-3  mt-20">
             <li className="mt-12 lg:mt-0  col-span-1 flex flex-col text-left bg-wayfastGreen rounded-3xl shadow divide-gray-200">
-              <img
-                src="/process_export.svg"
-                alt="Picture of the author"
-                objectPosition="center"
-                className="h-24 w-auto sm:h-24 text"
-              />
-              <div className="-mt-9 flex-1 flex flex-col pb-4 px-8">
+              <div className="bg-white w-1/4  rounded-full mt-4 ml-8">
+                <img
+                  src="/fast.svg"
+                  alt="Picture of the author"
+                  objectPosition="center"
+                  className="h-24 w-24 sm:h-24 "
+                />
+              </div>
+              <div className="mt-2 flex-1 flex flex-col pb-4 px-8">
+                <h3 className="text-xl lg:text-2xl text-white font-medium">
+                  1,200 Plants / hr.
+                </h3>
+                <p className="text-sm my-4 leading-6 text-white flex flex-col items-left font-light">
+                  <span className="block">
+                    Finely-tuned RFID system picks up Metrc tags anywhere under
+                    the hanging scale without needing a line of sight.
+                  </span>
+                </p>
+              </div>
+            </li>
+            <li className="mt-12 lg:mt-0  col-span-1 flex flex-col text-left bg-wayfastGreen rounded-3xl shadow divide-gray-200">
+              <div className="bg-white w-1/4  rounded-full mt-4 ml-8">
+                <img
+                  src="/fast.svg"
+                  alt="Picture of the author"
+                  objectPosition="center"
+                  className="h-24 w-24 sm:h-24 "
+                />
+              </div>
+              <div className="mt-2 flex-1 flex flex-col pb-4 px-8">
                 <h3 className="text-xl lg:text-2xl text-white font-medium">
                   Pin Point Precision.
                 </h3>
@@ -145,13 +173,15 @@ export default function Home() {
               </div>
             </li>
             <li className="mt-12 lg:mt-0  col-span-1 flex flex-col text-left bg-wayfastGreen rounded-3xl shadow divide-gray-200">
-              <img
-                src="/process_export.svg"
-                alt="Picture of the author"
-                objectPosition="center"
-                className="h-24 w-auto sm:h-24 text"
-              />
-              <div className="-mt-9 flex-1 flex flex-col pb-4 px-8">
+              <div className="bg-white w-1/4  rounded-full mt-4 ml-8">
+                <img
+                  src="/fast.svg"
+                  alt="Picture of the author"
+                  objectPosition="center"
+                  className="h-24 w-24 sm:h-24 "
+                />
+              </div>
+              <div className="mt-2 flex-1 flex flex-col pb-4 px-8">
                 <h3 className="text-xl lg:text-2xl text-white font-medium">
                   Metrc Compliant.
                 </h3>
@@ -159,25 +189,6 @@ export default function Home() {
                   <span className="block">
                     Legal for Trade, NTEP Certified, and Metrc integrated. Our
                     smart weighing platform checks all the boxes.
-                  </span>
-                </p>
-              </div>
-            </li>
-            <li className="mt-12 lg:mt-0  col-span-1 flex flex-col text-left bg-wayfastGreen rounded-3xl shadow divide-gray-200">
-              <img
-                src="/process_export.svg"
-                alt="Picture of the author"
-                objectPosition="center"
-                className="h-24 w-auto sm:h-24 text"
-              />
-              <div className="-mt-9 flex-1 flex flex-col pb-4 px-8">
-                <h3 className="text-xl lg:text-2xl text-white font-medium">
-                  1,200 Plants / hr.
-                </h3>
-                <p className="text-sm my-4 leading-6 text-white flex flex-col items-left font-light">
-                  <span className="block">
-                    Finely-tuned RFID system picks up Metrc tags anywhere under
-                    the hanging scale without needing a line of sight.
                   </span>
                 </p>
               </div>
