@@ -1,5 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import Image from "next/image";
+import ReactPlayer from "react-player";
+import { PlayIcon } from "@heroicons/react/solid";
 
 // COMPONENTS
 import PageContainer from "../components//pageContainer";
@@ -13,7 +16,248 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PageContainer>
-        <h1>hi</h1>
+        <div className=" h-100 relative">
+          <Image
+            src="/head_banner_desk.jpg"
+            alt="Picture of the author"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            className="z-0"
+          />
+          <main className="px-12 pt-12 py-48 lg:py-24 z-10 relative max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-12 lg:gap-4">
+            <div className="sm:text-center lg:col-span-7 lg:text-left lg:flex flex-col lg:items-start">
+              <h1 className="tracking-tight text-wayfastGreen  pt-6 font-bold text-4xl md:text-6xl  lg:text-5xl, xl:text-6xl">
+                <span className="block pt-2"> CANNABIS</span>
+                <span className="block pt-2">CULTIVATION</span>
+                <span className="block pt-2">SCALES.</span>
+              </h1>
+              <p className="mt-6 text-3xl font-light tracking-wider">
+                Watch It Work In Real Time
+              </p>
+              <div className="mt-12 flex items-center justify-center">
+                <a
+                  href="/services"
+                  className="mx-2 flex items-center justify-center px-10 py-3 border-2 border-wayfastGreen rounded-2xl text-base bg-wayfastGreen hover:bg-white  text-white hover:text-black md:py-4 "
+                >
+                  REQUEST QUOTE
+                </a>
+              </div>
+            </div>
+            <div className="col-span-5">
+              <ReactPlayer
+                url="https://www.youtube.com/watch?v=6Dj2v0e8muA"
+                light
+                playIcon={
+                  <PlayIcon
+                    className="h-24 w-24 text-wayfastGreen"
+                    aria-hidden="true"
+                  />
+                }
+              />
+            </div>
+          </main>
+        </div>
+
+        <main className="px-12 py-16 sm:py-20 z-10 relative max-w-7xl mx-auto ">
+          <h1 className="text-black  text-center tracking-wide font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
+            Don&apos;t Beat Around the Bush
+          </h1>
+          <div className="grid grid-cols-1 lg:grid-cols-3 mt-20">
+            <div className="flex flex-col">
+              <img
+                src="/process_tap.svg"
+                alt="Picture of the author"
+                objectPosition="center"
+                className="h-24 w-auto sm:h-24"
+              />
+              <div className="flex flex-row items-center">
+                <p className="my-8 text-3xl font-bold text-white  text-center w-min mx-auto  rounded-2xl px-7 py-4 bg-wayfastGreen">
+                  1
+                </p>
+                <div className="h-1 bg-wayfastGreen" />
+              </div>
+              <h3 className="pt-4 text-center  mb-6  text-black text-3xl font-medium tracking-widest">
+                Tap to Weigh
+              </h3>
+            </div>
+            <div className="flex flex-col">
+              <img
+                src="/process_repeat.svg"
+                alt="Picture of the author"
+                objectPosition="center"
+                className="h-24 w-auto sm:h-24"
+              />
+              <p className="my-8 text-3xl font-bold text-white  text-center w-min mx-auto  rounded-2xl px-7 py-4 bg-wayfastGreen">
+                2
+              </p>
+              <h3 className="pt-4 text-center  mb-6  text-black text-3xl font-medium tracking-widest">
+                Remove & Repeat
+              </h3>
+            </div>
+            <div className="flex flex-col">
+              <img
+                src="/process_export.svg"
+                alt="Picture of the author"
+                objectPosition="center"
+                className="h-24 w-auto sm:h-24"
+              />
+              <p className="my-8 text-3xl font-bold text-white  text-center w-min mx-auto  rounded-2xl px-7 py-4 bg-wayfastGreen">
+                3
+              </p>
+              <h3 className="pt-4 text-center  mb-6  text-black text-3xl font-medium tracking-widest">
+                Export Data
+              </h3>
+            </div>
+          </div>
+          <p className="text-center text-gray-700 mt-4">
+            All of our solutions clock in at 1200 plants per hour to ensure your
+            team&apos;s performance is always optimized.
+            <span className="block">
+              Whether you need a hanging scale, platform scale, or both. We have
+              the fastest and most accurate solution for you.
+            </span>
+          </p>
+        </main>
+
+        <main className="px-12 py-16 sm:py-20 z-10 relative max-w-7xl mx-auto ">
+          <h1 className="text-black  text-center tracking-wide font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
+            Features & Benefits
+          </h1>
+          <ul className="grid grid-cols-1 gap-6  lg:grid-cols-3  mt-20">
+            <li className="mt-12 lg:mt-0  col-span-1 flex flex-col text-left bg-wayfastGreen rounded-3xl shadow divide-gray-200">
+              <img
+                src="/process_export.svg"
+                alt="Picture of the author"
+                objectPosition="center"
+                className="h-24 w-auto sm:h-24 text"
+              />
+              <div className="-mt-9 flex-1 flex flex-col pb-4 px-8">
+                <h3 className="text-xl lg:text-2xl text-white font-medium">
+                  Pin Point Precision.
+                </h3>
+                <p className="text-sm my-4 leading-6 text-white flex flex-col items-left font-light">
+                  <span className="block">
+                    Our larger platforms offer accurate weighing no matter where
+                    the plant is placed on the scale.
+                  </span>
+                </p>
+              </div>
+            </li>
+            <li className="mt-12 lg:mt-0  col-span-1 flex flex-col text-left bg-wayfastGreen rounded-3xl shadow divide-gray-200">
+              <img
+                src="/process_export.svg"
+                alt="Picture of the author"
+                objectPosition="center"
+                className="h-24 w-auto sm:h-24 text"
+              />
+              <div className="-mt-9 flex-1 flex flex-col pb-4 px-8">
+                <h3 className="text-xl lg:text-2xl text-white font-medium">
+                  Metrc Compliant.
+                </h3>
+                <p className="text-sm my-4 leading-6 text-white flex flex-col items-left font-light">
+                  <span className="block">
+                    Legal for Trade, NTEP Certified, and Metrc integrated. Our
+                    smart weighing platform checks all the boxes.
+                  </span>
+                </p>
+              </div>
+            </li>
+            <li className="mt-12 lg:mt-0  col-span-1 flex flex-col text-left bg-wayfastGreen rounded-3xl shadow divide-gray-200">
+              <img
+                src="/process_export.svg"
+                alt="Picture of the author"
+                objectPosition="center"
+                className="h-24 w-auto sm:h-24 text"
+              />
+              <div className="-mt-9 flex-1 flex flex-col pb-4 px-8">
+                <h3 className="text-xl lg:text-2xl text-white font-medium">
+                  1,200 Plants / hr.
+                </h3>
+                <p className="text-sm my-4 leading-6 text-white flex flex-col items-left font-light">
+                  <span className="block">
+                    Finely-tuned RFID system picks up Metrc tags anywhere under
+                    the hanging scale without needing a line of sight.
+                  </span>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </main>
+
+        <main className="px-12 py-16 sm:py-20 z-10 relative max-w-7xl mx-auto ">
+          <h1 className="text-black  text-center tracking-wide font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
+            Product Line
+          </h1>
+          <div className="grid grid-cols-2 gap-16 mt-24">
+            <img
+              src="/platform_scale.jpg"
+              alt="Picture of the author"
+              objectPosition="center"
+              className="w-3/4 h:auto"
+            />
+            <div className="flex flex-col ">
+              <h1 className="text-wayfastGreen  text-left tracking-wide font-semibold text-3xl md:text-5xl lg:font-extrabold lg:text-4xl, xl:text-5xl">
+                Platform Scale
+              </h1>
+
+              <ul className="marker:text-wayfastGreen list-outside  list-disc mt-12">
+                <li className="py-4 text-2xl font-semibold">
+                  Automatically Detects RFID Plant Tag
+                </li>
+                <li className="py-2 text-2xl font-semibold">
+                  24” x 36” Platform OHAUS Scale
+                </li>
+                <li className="py-2 text-2xl font-semibold">
+                  6” Wheels for Maximum Portability
+                </li>
+                <li className="py-2 text-2xl font-semibold">
+                  Dimensions: 41” x 24” x 41”
+                </li>
+                <li className="py-2 text-2xl font-semibold">
+                  Capacity: 250 lbs
+                </li>
+                <li className="py-2 text-2xl font-semibold">
+                  Recommended floor space: 3' x 5'
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-16 mt-24">
+            <div className="flex flex-col ">
+              <h1 className="text-wayfastGreen  text-left tracking-wide font-semibold text-3xl md:text-5xl lg:font-extrabold lg:text-4xl, xl:text-5xl">
+                Hanging Scale
+              </h1>
+
+              <ul className="marker:text-wayfastGreen list-outside  list-disc mt-12">
+                <li className="py-4 text-2xl font-semibold">
+                  Automatically Detects RFID Plant Tag
+                </li>
+                <li className="py-2 text-2xl font-semibold">
+                  24” x 36” Platform OHAUS Scale
+                </li>
+                <li className="py-2 text-2xl font-semibold">
+                  6” Wheels for Maximum Portability
+                </li>
+                <li className="py-2 text-2xl font-semibold">
+                  Dimensions: 41” x 24” x 41”
+                </li>
+                <li className="py-2 text-2xl font-semibold">
+                  Capacity: 250 lbs
+                </li>
+                <li className="py-2 text-2xl font-semibold">
+                  Recommended floor space: 3' x 5'
+                </li>
+              </ul>
+            </div>
+            <img
+              src="/hanging_scale.jpg"
+              alt="Picture of the author"
+              objectPosition="center"
+              className="w-3/4 h:auto"
+            />
+          </div>
+        </main>
       </PageContainer>
     </div>
   );
