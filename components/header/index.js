@@ -16,7 +16,7 @@ export default function Home() {
         <div className="lg:hidden" />
         <div className="hidden lg:flex space-x-6 items-center">
           <a
-            href="https://www.linkedin.com/company/6pak-solutions/"
+            href="https://www.linkedin.com/company/gowayfast/"
             target="_blank"
             rel="noreferrer"
             className="text-white hover:text-white"
@@ -37,7 +37,7 @@ export default function Home() {
           </a>
 
           <a
-            href="https://www.instagram.com/6pak.solutions/"
+            href="https://www.instagram.com/gowayfast/"
             target="_blank"
             rel="noreferrer"
             className="text-white hover:text-white"

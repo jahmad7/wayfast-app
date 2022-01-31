@@ -198,7 +198,7 @@ export default function Home() {
           </h1>
           <ul className="grid grid-cols-1 gap-6  lg:grid-cols-3  mt-12 lg:mt-20">
             <li className="mt-12 lg:mt-0  col-span-1 flex flex-col text-left bg-wayfastGreen rounded-3xl shadow divide-gray-200">
-              <div className="bg-white w-1/4  rounded-full mt-4 ml-8">
+              <div className="w-1/4  rounded-full mt-4 ml-8">
                 <img
                   src="/fast.svg"
                   alt="Picture of the author"
@@ -219,9 +219,9 @@ export default function Home() {
               </div>
             </li>
             <li className="mt-12 lg:mt-0  col-span-1 flex flex-col text-left bg-wayfastGreen rounded-3xl shadow divide-gray-200">
-              <div className="bg-white w-1/4  rounded-full mt-4 ml-8">
+              <div className="w-1/4  rounded-full mt-4 ml-8">
                 <img
-                  src="/fast.svg"
+                  src="/pint_point.svg"
                   alt="Picture of the author"
                   objectPosition="center"
                   className="h-24 w-24 sm:h-24 "
@@ -240,9 +240,9 @@ export default function Home() {
               </div>
             </li>
             <li className="mt-12 lg:mt-0  col-span-1 flex flex-col text-left bg-wayfastGreen rounded-3xl shadow divide-gray-200">
-              <div className="bg-white w-1/4  rounded-full mt-4 ml-8">
+              <div className=" w-1/4  rounded-full mt-4 ml-8">
                 <img
-                  src="/fast.svg"
+                  src="/metrc_compliant.svg"
                   alt="Picture of the author"
                   objectPosition="center"
                   className="h-24 w-24 sm:h-24 "
@@ -296,7 +296,7 @@ export default function Home() {
                   Capacity: 250 lbs
                 </li>
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
-                  Recommended floor space: 3' x 5'
+                  Recommended floor space: 3&apos; x 5&apos;
                 </li>
               </ul>
             </div>
@@ -353,7 +353,7 @@ export default function Home() {
                   Capacity: 250 lbs
                 </li>
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
-                  Recommended floor space: 3' x 5'
+                  Recommended floor space: 3&apos; x 5&apos;
                 </li>
               </ul>
             </div>
@@ -404,7 +404,7 @@ export default function Home() {
           className="px-12 py-16 sm:py-20 z-10 relative max-w-4xl mx-auto "
         >
           <h1 className="tracking-tight text-black  text-center  font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
-            Let's Get In Touch
+            Let&apos;s Get In Touch
           </h1>
           <div>
             <h3 className="font-bold text-2xl tracking-tight my-8">

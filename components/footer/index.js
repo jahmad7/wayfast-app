@@ -54,7 +54,7 @@ function PageContainer({ children }) {
           <div className="col-span-2 lg:col-span-1 pt-8 lg:pt-0 flex flex-col items-end justify-end">
             <div className="flex space-x-6">
               <a
-                href="https://www.linkedin.com/company/6pak-solutions/"
+                href="https://www.linkedin.com/company/gowayfast/"
                 target="_blank"
                 rel="noreferrer"
                 className="text-white hover:text-white"
@@ -75,7 +75,7 @@ function PageContainer({ children }) {
               </a>
 
               <a
-                href="https://www.instagram.com/6pak.solutions/"
+                href="https://www.instagram.com/gowayfast/"
                 target="_blank"
                 rel="noreferrer"
                 className="text-white hover:text-white"
