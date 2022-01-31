@@ -341,19 +341,19 @@ export default function Home() {
                   Automatically Detects RFID Plant Tag
                 </li>
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
-                  24” x 36” Platform OHAUS Scale
+                  Adjustable Height
                 </li>
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
-                  6” Wheels for Maximum Portability
+                  3” Wheels for Maximum Portability
                 </li>
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
-                  Dimensions: 41” x 24” x 41”
+                  Dimensions: 16” x 16” x 60”
                 </li>
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
-                  Capacity: 250 lbs
+                  Capacity: 30 lbs
                 </li>
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
-                  Recommended floor space: 3&apos; x 5&apos;
+                  Recommended floor space: 2&apos; x 2&apos;
                 </li>
               </ul>
             </div>
