@@ -17,7 +17,7 @@ function PageContainer({ children }) {
               className="h-8 w-auto sm:h-10"
             />
           </div>
-          <div className="mt-6 grid grid-cols-2 gap-8 xl:mt-0 ml-8">
+          <div className="mt-6 gap-8 xl:mt-0 ml-8 text-right">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <ul className="mt-4 space-y-4">
@@ -117,7 +117,7 @@ function PageContainer({ children }) {
               </a>
             </div>
             <p className="pt-2 text-xs text-white text-right">
-              Copyright © 2020 Wayfast Inc. — All Rights Reserved.{" "}
+              Copyright © 2022 Wayfast Inc. — All Rights Reserved.{" "}
               <span className="block">
                 Privacy Policy | Terms of Service | Cookie Policy
               </span>
@@ -126,8 +126,13 @@ function PageContainer({ children }) {
         </div>
         <div className="mt-12 border-t border-gray-200 pt-8">
           <p className="text-base text-white text-center">
-            &copy; 2021 Powered by{" "}
-            <a className="hover:text-gray" href="https://castleclock.com/">
+            &copy; 2022 Powered by{" "}
+            <a
+              className="hover:text-gray"
+              href="https://castleclock.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
               CastleClock
             </a>
           </p>

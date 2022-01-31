@@ -1,13 +1,20 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import Image from "next/image";
 import ReactPlayer from "react-player";
 import { PlayIcon } from "@heroicons/react/solid";
-
+import { useForm } from "react-hook-form";
 // COMPONENTS
 import PageContainer from "../components//pageContainer";
 
 export default function Home() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   return (
     <div>
       <Head>
@@ -26,7 +33,7 @@ export default function Home() {
             className="z-0"
           />
           <main className="px-12 pt-12 py-48 lg:py-24 z-10 relative max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-12 lg:gap-4">
-            <div className="sm:text-center lg:col-span-7 lg:text-left lg:flex flex-col lg:items-start">
+            <div className="text-center lg:col-span-7 lg:text-left lg:flex flex-col lg:items-start">
               <h1 className="tracking-tight text-wayfastGreen  pt-6 font-bold text-4xl md:text-6xl  lg:text-5xl, xl:text-6xl">
                 <span className="block pt-2"> CANNABIS</span>
                 <span className="block pt-2">CULTIVATION</span>
@@ -35,16 +42,16 @@ export default function Home() {
               <p className="mt-6 text-3xl font-light tracking-wider">
                 Watch It Work In Real Time
               </p>
-              <div className="mt-12 flex items-center justify-center">
+              <div className="mt-12  items-center justify-center hidden lg:flex">
                 <a
-                  href="/services"
-                  className="mx-2 flex items-center justify-center px-10 py-3 border-2 border-wayfastGreen rounded-2xl text-base bg-wayfastGreen hover:bg-white  text-white hover:text-black md:py-4 "
+                  href="#contact"
+                  className="mx-2 flex items-center justify-center px-10 py-3  border-2 border-wayfastGreen rounded-2xl text-base bg-wayfastGreen hover:bg-white  text-white hover:text-black md:py-4 "
                 >
                   REQUEST QUOTE
                 </a>
               </div>
             </div>
-            <div className="col-span-5">
+            <div className="col-span-5 flex mt-4 lg:mt-0">
               <ReactPlayer
                 url="https://www.youtube.com/watch?v=6Dj2v0e8muA"
                 light
@@ -56,6 +63,16 @@ export default function Home() {
                 }
               />
             </div>
+            <div className=" lg:hidden">
+              <div className="mt-12 flex items-center justify-center">
+                <a
+                  href="#contact"
+                  className="mx-2 flex items-center justify-center px-10 py-3  border-2 border-wayfastGreen rounded-2xl text-base bg-wayfastGreen hover:bg-white  text-white hover:text-black md:py-4 "
+                >
+                  REQUEST QUOTE
+                </a>
+              </div>
+            </div>
           </main>
         </div>
 
@@ -63,7 +80,7 @@ export default function Home() {
           <h1 className="text-black  text-center tracking-wide font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
             Don&apos;t Beat Around the Bush
           </h1>
-          <div className="grid grid-cols-1 lg:grid-cols-3 mt-20">
+          <div className="hidden lg:grid grid-cols-1 lg:grid-cols-3 mt-20">
             <div className="flex flex-col">
               <img
                 src="/process_tap.svg"
@@ -71,9 +88,6 @@ export default function Home() {
                 objectPosition="center"
                 className="h-24 w-auto sm:h-24"
               />
-              <div className="flex flex-row items-center">
-                <div className="h-1 bg-wayfastGreen" />
-              </div>
             </div>
             <div className="flex flex-col">
               <img
@@ -115,10 +129,63 @@ export default function Home() {
               </h3>
             </div>
           </div>
-          <p className="text-center text-gray-700 mt-4">
+          <div className="grid lg:hidden grid-cols-3 mt-20">
+            <div className="col-span-1 flex flex-col gap-28">
+              <div className="flex flex-col">
+                <img
+                  src="/process_tap.svg"
+                  alt="Picture of the author"
+                  objectPosition="center"
+                  className="h-24 w-auto sm:h-24"
+                />
+              </div>
+              <div className="flex flex-col">
+                <img
+                  src="/process_repeat.svg"
+                  alt="Picture of the author"
+                  objectPosition="center"
+                  className="h-24 w-auto sm:h-24"
+                />
+              </div>
+              <div className="flex flex-col">
+                <img
+                  src="/process_export.svg"
+                  alt="Picture of the author"
+                  objectPosition="center"
+                  className="h-24 w-auto sm:h-24"
+                />
+              </div>
+            </div>
+            {/* <div className="col-span-1 h-min"> */}
+            <img
+              src="/steps_mob.svg"
+              alt="Picture of the author"
+              objectPosition="center"
+              className="h-3/5 w-full mt-4 "
+            />
+            {/* </div> */}
+            <div className="col-span-1 flex flex-col gap-28">
+              <div className="flex flex-col">
+                <h3 className="pt-4 text-left  mb-6  text-black text-xl font-medium tracking-widest">
+                  Tap to Weigh
+                </h3>
+              </div>
+              <div className="flex flex-col">
+                <h3 className="pt-4 text-left  mb-6  text-black text-xl font-medium tracking-widest">
+                  Remove & Repeat
+                </h3>
+              </div>
+              <div className="flex flex-col">
+                <h3 className="pt-4 text-left  mb-6  text-black text-xl font-medium tracking-widest">
+                  Export Data
+                </h3>
+              </div>
+            </div>
+          </div>
+          <p className="text-center text-gray-700 -mt-48 lg:mt-4">
             All of our solutions clock in at 1200 plants per hour to ensure your
-            team&apos;s performance is always optimized.
-            <span className="block">
+            team&apos;s performance is always optimized.{" "}
+            <span className="lg:block">
               Whether you need a hanging scale, platform scale, or both. We have
               the fastest and most accurate solution for you.
             </span>
@@ -129,7 +196,7 @@ export default function Home() {
           <h1 className="text-black  text-center tracking-wide font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
             Features & Benefits
           </h1>
-          <ul className="grid grid-cols-1 gap-6  lg:grid-cols-3  mt-20">
+          <ul className="grid grid-cols-1 gap-6  lg:grid-cols-3  mt-12 lg:mt-20">
             <li className="mt-12 lg:mt-0  col-span-1 flex flex-col text-left bg-wayfastGreen rounded-3xl shadow divide-gray-200">
               <div className="bg-white w-1/4  rounded-full mt-4 ml-8">
                 <img
@@ -186,7 +253,7 @@ export default function Home() {
                   Metrc Compliant.
                 </h3>
                 <p className="text-sm my-4 leading-6 text-white flex flex-col items-left font-light">
-                  <span className="block">
+                  <span id="products" className="block">
                     Legal for Trade, NTEP Certified, and Metrc integrated. Our
                     smart weighing platform checks all the boxes.
                   </span>
@@ -200,63 +267,92 @@ export default function Home() {
           <h1 className="text-black  text-center tracking-wide font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
             Product Line
           </h1>
-          <div className="grid grid-cols-2 gap-16 mt-24">
+          <div className="flex flex-col lg:grid grid-cols-2 gap-16 mt-24">
             <img
               src="/platform_scale.jpg"
               alt="Picture of the author"
               objectPosition="center"
-              className="w-3/4 h:auto"
+              className="w-auto lg:w-3/4 h:auto"
             />
             <div className="flex flex-col ">
-              <h1 className="text-wayfastGreen  text-left tracking-wide font-semibold text-3xl md:text-5xl lg:font-extrabold lg:text-4xl, xl:text-5xl">
+              <h1 className="text-wayfastGreen text-center lg:text-left tracking-wide font-semibold text-4xl md:text-5xl lg:font-extrabold lg:text-4xl, xl:text-5xl">
                 Platform Scale
               </h1>
 
               <ul className="marker:text-wayfastGreen list-outside  list-disc mt-12">
-                <li className="py-4 text-2xl font-semibold">
+                <li className="py-4 text-lg lg:text-2xl font-semibold">
                   Automatically Detects RFID Plant Tag
                 </li>
-                <li className="py-2 text-2xl font-semibold">
+                <li className="py-2 text-lg lg:text-2xl font-semibold">
                   24” x 36” Platform OHAUS Scale
                 </li>
-                <li className="py-2 text-2xl font-semibold">
+                <li className="py-2 text-lg lg:text-2xl font-semibold">
                   6” Wheels for Maximum Portability
                 </li>
-                <li className="py-2 text-2xl font-semibold">
+                <li className="py-2 text-lg lg:text-2xl font-semibold">
                   Dimensions: 41” x 24” x 41”
                 </li>
-                <li className="py-2 text-2xl font-semibold">
+                <li className="py-2 text-lg lg:text-2xl font-semibold">
                   Capacity: 250 lbs
                 </li>
-                <li className="py-2 text-2xl font-semibold">
+                <li className="py-2 text-lg lg:text-2xl font-semibold">
                   Recommended floor space: 3' x 5'
                 </li>
               </ul>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-16 mt-24">
+        </main>
+
+        <div className=" h-100 relative">
+          <Image
+            src="/battery_banner_desk.jpg"
+            alt="Picture of the author"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            className="z-0"
+          />
+          <main className="px-12 py-16 sm:py-20 z-10 relative max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-12 lg:gap-4">
+            <div className="sm:text-center lg:col-span-6 lg:text-left lg:flex flex-col lg:items-start justify-center">
+              <h1 className=" text-white text-left mb-4 lg:mb-0 pt-6 lg:font-extralight  tracking-wider	text-4xl md:text-6xl lg:text-5xl, xl:text-6xl">
+                <span className="block ">Harvest in the dark</span>
+                <span className="block">for up to 10+ hrs</span>
+              </h1>
+            </div>
+            <div className="col-span-6 pt-6 border-t lg:border-t-0 lg:border-l border-white lg:pl-8 font-light tracking-wide	">
+              <p className="text-white text-2xl">
+                Upgrade your production
+                <span className="block pt-4">
+                  with our optional 42000 mAh rechargeable battery.
+                </span>
+              </p>
+            </div>
+          </main>
+        </div>
+        <main className="px-12 py-16 sm:py-20 z-10 relative max-w-7xl mx-auto ">
+          <div className="flex flex-col-reverse lg:grid grid-cols-2 gap-16 mt-24">
             <div className="flex flex-col ">
-              <h1 className="text-wayfastGreen  text-left tracking-wide font-semibold text-3xl md:text-5xl lg:font-extrabold lg:text-4xl, xl:text-5xl">
+              <h1 className="text-wayfastGreen text-center lg:text-left tracking-wide font-semibold text-4xl md:text-5xl lg:font-extrabold lg:text-4xl, xl:text-5xl">
                 Hanging Scale
               </h1>
 
               <ul className="marker:text-wayfastGreen list-outside  list-disc mt-12">
-                <li className="py-4 text-2xl font-semibold">
+                <li className="py-4 text-lg lg:text-2xl font-semibold">
                   Automatically Detects RFID Plant Tag
                 </li>
-                <li className="py-2 text-2xl font-semibold">
+                <li className="py-2 text-lg lg:text-2xl font-semibold">
                   24” x 36” Platform OHAUS Scale
                 </li>
-                <li className="py-2 text-2xl font-semibold">
+                <li className="py-2 text-lg lg:text-2xl font-semibold">
                   6” Wheels for Maximum Portability
                 </li>
-                <li className="py-2 text-2xl font-semibold">
+                <li className="py-2 text-lg lg:text-2xl font-semibold">
                   Dimensions: 41” x 24” x 41”
                 </li>
-                <li className="py-2 text-2xl font-semibold">
+                <li className="py-2 text-lg lg:text-2xl font-semibold">
                   Capacity: 250 lbs
                 </li>
-                <li className="py-2 text-2xl font-semibold">
+                <li className="py-2 text-lg lg:text-2xl font-semibold">
                   Recommended floor space: 3' x 5'
                 </li>
               </ul>
@@ -265,10 +361,236 @@ export default function Home() {
               src="/hanging_scale.jpg"
               alt="Picture of the author"
               objectPosition="center"
-              className="w-3/4 h:auto"
+              className="w-auto lg:w-3/4 h:auto"
             />
           </div>
         </main>
+
+        <div className=" h-100 relative">
+          <Image
+            src="/testimonial_banner_desk.jpg"
+            alt="Picture of the author"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            className="z-0"
+          />
+          <main className="px-12 pt-16 sm:pt-20  pb-8 z-10 relative max-w-5xl mx-auto flex flex-col">
+            <Image
+              src="/white_logo.svg"
+              alt="Picture of the author"
+              width={100}
+              height={50}
+              className="z-0 rounded-3xl"
+            />
+            <div className="sm:text-center py-8">
+              <p className="text-lg text-center tracking-wide text-white z-0 md:col-span-4 font-extralight">
+                “What took me 1.5 hours, now takes me 4 minutes”
+              </p>
+            </div>
+            <div className="text-center text-white">
+              <p className="text-2xl font-semibold tracking-wide">
+                John Bianco
+              </p>
+              <p id="contact" className="block text-xl font-light pt-1">
+                Clear Water Collective, Owner
+              </p>
+            </div>
+          </main>
+        </div>
+
+        <form
+          // onSubmit={handleSubmit(submit)}
+          className="px-12 py-16 sm:py-20 z-10 relative max-w-4xl mx-auto "
+        >
+          <h1 className="tracking-tight text-black  text-center  font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
+            Let's Get In Touch
+          </h1>
+          <div>
+            <h3 className="font-bold text-2xl tracking-tight my-8">
+              1. Contact Information
+            </h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 gap-y-2">
+              <div className="relative">
+                <input
+                  type="text"
+                  autoComplete="given-name"
+                  className={`shadow-sm p-2 block w-full sm:text-sm border ${
+                    errors.name ? "border-red" : "border-wayfastGreen"
+                  } focus:outline-none focus:border-atgBlue rounded-xl`}
+                  placeholder="FULL NAME"
+                  {...register("name", { required: true })}
+                />
+                <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                  <svg
+                    className={`${
+                      errors.name ? "visible" : "hidden"
+                    } h-5 w-5 text-red`}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div className="relative">
+                <input
+                  type="text"
+                  autoComplete="given-name"
+                  className={`shadow-sm p-2 block w-full sm:text-sm border ${
+                    errors.phone ? "border-red" : "border-wayfastGreen"
+                  } focus:outline-none focus:border-atgBlue rounded-xl`}
+                  placeholder="PHONE NUMBER"
+                  {...register("phone", { required: true })}
+                />
+                <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                  <svg
+                    className={`${
+                      errors.phone ? "visible" : "hidden"
+                    } h-5 w-5 text-red`}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div className="relative">
+                <input
+                  type="text"
+                  autoComplete="given-name"
+                  className={`shadow-sm p-2 block w-full sm:text-sm border ${
+                    errors.email ? "border-red" : "border-wayfastGreen"
+                  } focus:outline-none focus:border-atgBlue rounded-xl`}
+                  placeholder="EMAIL ADDRESS"
+                  {...register("email", { required: true })}
+                />
+                <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                  <svg
+                    className={`${
+                      errors.email ? "visible" : "hidden"
+                    } h-5 w-5 text-red`}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div className="relative">
+                <input
+                  type="text"
+                  autoComplete="given-name"
+                  className={`shadow-sm p-2 block w-full sm:text-sm border ${
+                    errors.company ? "border-red" : "border-wayfastGreen"
+                  } focus:outline-none focus:border-atgBlue rounded-xl`}
+                  placeholder="COMPANY NAME"
+                  {...register("company", { required: true })}
+                />
+                <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                  <svg
+                    className={`${
+                      errors.company ? "visible" : "hidden"
+                    } h-5 w-5 text-red`}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <h3 className="font-bold text-2xl tracking-tight my-8">
+              2. What are you looking for?
+            </h3>
+            {errors.product && (
+              <p className=" text-lg tracking-wide  pt-2 lg:pt-1` text-red">
+                A product Selection is Required!
+              </p>
+            )}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 gap-y-2">
+              <div className="flex flex-row items-center mt-3">
+                <input
+                  type="checkbox"
+                  value="cartridge"
+                  {...register("product", { required: true })}
+                  className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                />
+                <div className="ml-3 text-base">
+                  <label className="font-medium text-gray-500 flex flex-row items-center justify-center gap-2">
+                    Hanging Scale
+                  </label>
+                </div>
+              </div>
+              <div className="flex items-center mt-3">
+                <input
+                  type="checkbox"
+                  value="bottles"
+                  {...register("product", { required: true })}
+                  className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                />
+                <div className="ml-3 text-base">
+                  <label className="font-medium text-gray-500 flex flex-row items-center justify-center gap-2">
+                    Platform Scale
+                  </label>
+                </div>
+              </div>
+              <div className="flex items-center mt-3 col-span-3">
+                <input
+                  type="checkbox"
+                  value="balms"
+                  {...register("product", { required: true })}
+                  className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                />
+                <div className="ml-3 text-base">
+                  <label className="font-medium text-gray-500 flex flex-row items-center justify-center gap-2">
+                    Other
+                  </label>
+                </div>
+                <input
+                  type="text"
+                  autoComplete="given-name"
+                  className={`shadow-sm p-2 block ml-4 w-full sm:text-sm border ${
+                    errors.email ? "border-red" : "border-wayfastGreen"
+                  } focus:outline-none focus:border-atgBlue rounded-xl`}
+                  placeholder="Type..."
+                />
+              </div>
+            </div>
+          </div>
+          <div className="mt-12 flex items-center justify-center">
+            <button
+              type="submit"
+              className="mx-2 flex items-center justify-center px-10 py-3 border-2 border-wayfastGreen rounded-2xl text-base bg-wayfastGreen hover:bg-white  text-white hover:text-black md:py-4 "
+            >
+              SEND REQUEST
+            </button>
+          </div>
+        </form>
       </PageContainer>
     </div>
   );
