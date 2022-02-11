@@ -1,20 +1,68 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/no-img-element */
+import React, { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import ReactPlayer from "react-player";
-import { PlayIcon } from "@heroicons/react/solid";
 import { useForm } from "react-hook-form";
+import { PlusIcon, ChevronUpIcon } from "@heroicons/react/outline";
+
 // COMPONENTS
 import PageContainer from "../components//pageContainer";
 
 export default function Home() {
+  const [platformSelected, setPlatformSelected] = useState(null);
+  const [hangingSelected, setHangingSelected] = useState(null);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const features = [
+    {
+      icon: "/features_tag.svg",
+      title: "Efficient (RFID Tag)",
+      body: "On screen options of 'No tag' or'Broken tag' to record certain plants keeps the harvest moving, in record time!",
+    },
+    {
+      icon: "/features_accurate.svg",
+      title: "Accurate",
+      body: " Our larger platforms offer accurate weighing no matter where the plant is placed on the scale.",
+    },
+    {
+      icon: "/features_compliant.svg",
+      title: "Compliant",
+      body: " Legal for Trade, NTEP Certified, and Metrc integrated. Our smart weighing platform checks all the boxes.",
+    },
+    {
+      icon: "/features_spanish.svg",
+      title: "Habla Espanol",
+      body: "Lorem Ipsum",
+    },
+    {
+      icon: "/features_data.svg",
+      title: "Local Backup",
+      body: " The onboard computer will capture your harvest data using standard, incremental or batch weighing modes",
+    },
+    {
+      icon: "/features_fast.svg",
+      title: "Fast",
+      body: "Lorem Ipsum",
+    },
+  ];
+
+  const platform = [
+    {
+      title: "Production Modes",
+      options: ["Incremental", "Batch", "Harvest"],
+    },
+    {
+      title: "Dimensions",
+      options: [" Dimensions: 41” x 24” x 41”"],
+    },
+  ];
   return (
     <div>
       <Head>
@@ -33,11 +81,11 @@ export default function Home() {
             className="z-0"
           />
           <main className="px-12 pt-12 py-48 lg:py-24 z-10 relative max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-12 lg:gap-4">
-            <div className="text-center lg:col-span-7 lg:text-left lg:flex flex-col lg:items-start">
+            <div className="text-center lg:col-span-6 lg:text-left lg:flex flex-col lg:items-start">
               <h1 className="tracking-tight text-wayfastGreen  pt-6 font-bold text-4xl md:text-6xl  lg:text-5xl, xl:text-6xl">
                 <span className="block pt-2"> CANNABIS</span>
                 <span className="block pt-2">CULTIVATION</span>
-                <span className="block pt-2">SCALES.</span>
+                <span className="block pt-2">SCALES</span>
               </h1>
               <p className="mt-6 text-3xl font-light tracking-wider">
                 Watch It Work In Real Time
@@ -51,16 +99,24 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="col-span-5 flex mt-4 lg:mt-0">
+            <div className="hidden md:flex col-span-6  items-center mt-4 lg:mt-0">
               <ReactPlayer
-                url="https://www.youtube.com/watch?v=6Dj2v0e8muA"
-                light
-                playIcon={
-                  <PlayIcon
-                    className="h-24 w-24 text-wayfastGreen"
-                    aria-hidden="true"
-                  />
-                }
+                url="https://youtu.be/VB3p1V3oB9k"
+                muted
+                loop
+                playing
+                width="100%"
+                height="83%"
+              />
+            </div>
+            <div className="md:hidden col-span-6 flex items-center justify-center mt-4 lg:mt-0">
+              <ReactPlayer
+                url="https://youtu.be/VB3p1V3oB9k"
+                muted
+                loop
+                playing
+                width="80%"
+                height="100%"
               />
             </div>
             <div className=" lg:hidden">
@@ -80,31 +136,7 @@ export default function Home() {
           <h1 className="text-black  text-center tracking-wide font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
             Don&apos;t Beat Around the Bush
           </h1>
-          <div className="hidden lg:grid grid-cols-1 lg:grid-cols-3 mt-20">
-            <div className="flex flex-col">
-              <img
-                src="/process_tap.svg"
-                alt="Picture of the author"
-                objectPosition="center"
-                className="h-24 w-auto sm:h-24"
-              />
-            </div>
-            <div className="flex flex-col">
-              <img
-                src="/process_repeat.svg"
-                alt="Picture of the author"
-                objectPosition="center"
-                className="h-24 w-auto sm:h-24"
-              />
-            </div>
-            <div className="flex flex-col">
-              <img
-                src="/process_export.svg"
-                alt="Picture of the author"
-                objectPosition="center"
-                className="h-24 w-auto sm:h-24"
-              />
-            </div>
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-3 mt-20">
             <div className="col-span-3 mx-40 mt-2">
               <img
                 src="/steps_desk.svg"
@@ -114,75 +146,51 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col">
-              <h3 className="pt-4 text-center  mb-6  text-black text-3xl font-medium tracking-widest">
-                Tap to Weigh
+              <h3 className="pt-4 text-center text-black text-3xl font-medium tracking-widest">
+                Weigh
               </h3>
             </div>
             <div className="flex flex-col">
-              <h3 className="pt-4 text-center  mb-6  text-black text-3xl font-medium tracking-widest">
-                Remove & Repeat
+              <h3 className="pt-4 text-center text-black text-3xl font-medium tracking-widest">
+                Repeat
               </h3>
             </div>
             <div className="flex flex-col">
-              <h3 className="pt-4 text-center  mb-6  text-black text-3xl font-medium tracking-widest">
-                Export Data
+              <h3 className="pt-4 text-center text-black text-3xl font-medium tracking-widest">
+                Export
               </h3>
             </div>
           </div>
-          <div className="grid lg:hidden grid-cols-3 mt-20">
-            <div className="col-span-1 flex flex-col gap-28">
-              <div className="flex flex-col">
-                <img
-                  src="/process_tap.svg"
-                  alt="Picture of the author"
-                  objectPosition="center"
-                  className="h-24 w-auto sm:h-24"
-                />
-              </div>
-              <div className="flex flex-col">
-                <img
-                  src="/process_repeat.svg"
-                  alt="Picture of the author"
-                  objectPosition="center"
-                  className="h-24 w-auto sm:h-24"
-                />
-              </div>
-              <div className="flex flex-col">
-                <img
-                  src="/process_export.svg"
-                  alt="Picture of the author"
-                  objectPosition="center"
-                  className="h-24 w-auto sm:h-24"
-                />
-              </div>
+          <div className="grid md:hidden grid-cols-2 mt-20 ">
+            <div className="">
+              <Image
+                src="/steps_mob.svg"
+                alt="Picture of the author"
+                objectPosition="center"
+                width={100}
+                height={550}
+                className=" mt-4 -my-auto "
+              />
             </div>
-            {/* <div className="col-span-1 h-min"> */}
-            <img
-              src="/steps_mob.svg"
-              alt="Picture of the author"
-              objectPosition="center"
-              className="h-3/5 w-full mt-4 "
-            />
-            {/* </div> */}
-            <div className="col-span-1 flex flex-col gap-28">
-              <div className="flex flex-col">
-                <h3 className="pt-4 text-left  mb-6  text-black text-xl font-medium tracking-widest">
-                  Tap to Weigh
+            <div className="col-span-1 flex flex-col gap-44">
+              <div className="flex flex-col justify-end">
+                <h3 className="pt-4 text-left  mb-4  text-black text-2xl font-medium tracking-widest">
+                  Weigh
                 </h3>
               </div>
-              <div className="flex flex-col">
-                <h3 className="pt-4 text-left  mb-6  text-black text-xl font-medium tracking-widest">
-                  Remove & Repeat
+              <div className="flex flex-col justify-end">
+                <h3 className="pt-4 text-left  mb-6  text-black text-2xl font-medium tracking-widest">
+                  Repeat
                 </h3>
               </div>
-              <div className="flex flex-col">
-                <h3 className="pt-4 text-left  mb-6  text-black text-xl font-medium tracking-widest">
-                  Export Data
+              <div className="flex flex-col justify-end">
+                <h3 className="pt-4 text-left  mb-6  text-black text-2xl font-medium tracking-widest">
+                  Export
                 </h3>
               </div>
             </div>
           </div>
-          <p className="text-center text-gray-700 -mt-48 lg:mt-4">
+          <p className="text-center text-gray-700  mt-12">
             All of our solutions clock in at 1200 plants per hour to ensure your
             team&apos;s performance is always optimized.{" "}
             <span className="lg:block">
@@ -192,81 +200,50 @@ export default function Home() {
           </p>
         </main>
 
+        <div className=" h-100 relative">
+          <Image
+            src="/banner_features_desk.jpg"
+            alt="Picture of the author"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            className="z-0"
+          />
+          <main className="px-12 py-16 z-10 relative max-w-7xl mx-auto flex flex-col lg:gap-4">
+            <h1 className="text-white  text-center tracking-wide font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
+              Features & Benefits
+            </h1>
+            <div className="col-span-12">
+              <div className="grid grid-cols-2 lg:grid-cols-3 mt-12 gap-x-12 lg:gap-x-24 gap-y-12">
+                {features.map((feature, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center lg:items-start justify-start"
+                  >
+                    <div className="flex  pb-4 md:pl-0 lg:pl-12">
+                      <img
+                        src={feature.icon}
+                        alt="Picture of the author"
+                        objectPosition="center"
+                        className="w-24 sm:h-24"
+                      />
+                    </div>
+                    <h3 className=" md:pl-0 lg:pl-12 text-white text-lg lg:text-2xl ml-1 font-bold text-center  lg:text-left tracking-wider ">
+                      {feature.title}
+                    </h3>
+                    <p className=" md:pl-0 lg:pl-12 text-left hidden  md:block pt-4 text-lg text-white font-thin">
+                      {feature.body}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </main>
+        </div>
         <main className="px-12 py-16 sm:py-20 z-10 relative max-w-7xl mx-auto ">
-          <h1 className="text-black  text-center tracking-wide font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
-            Features & Benefits
-          </h1>
-          <ul className="grid grid-cols-1 gap-6  lg:grid-cols-3  mt-12 lg:mt-20">
-            <li className="mt-12 lg:mt-0  col-span-1 flex flex-col text-left bg-wayfastGreen rounded-3xl shadow divide-gray-200">
-              <div className="w-1/4  rounded-full mt-4 ml-8">
-                <img
-                  src="/fast.svg"
-                  alt="Picture of the author"
-                  objectPosition="center"
-                  className="h-24 w-24 sm:h-24 "
-                />
-              </div>
-              <div className="mt-2 flex-1 flex flex-col pb-4 px-8">
-                <h3 className="text-xl lg:text-2xl text-white font-medium">
-                  1,200 Plants / hr.
-                </h3>
-                <p className="text-sm my-4 leading-6 text-white flex flex-col items-left font-light">
-                  <span className="block">
-                    Finely-tuned RFID system picks up Metrc tags anywhere under
-                    the hanging scale without needing a line of sight.
-                  </span>
-                </p>
-              </div>
-            </li>
-            <li className="mt-12 lg:mt-0  col-span-1 flex flex-col text-left bg-wayfastGreen rounded-3xl shadow divide-gray-200">
-              <div className="w-1/4  rounded-full mt-4 ml-8">
-                <img
-                  src="/pint_point.svg"
-                  alt="Picture of the author"
-                  objectPosition="center"
-                  className="h-24 w-24 sm:h-24 "
-                />
-              </div>
-              <div className="mt-2 flex-1 flex flex-col pb-4 px-8">
-                <h3 className="text-xl lg:text-2xl text-white font-medium">
-                  Pin Point Precision.
-                </h3>
-                <p className="text-sm my-4 leading-6 text-white flex flex-col items-left font-light">
-                  <span className="block">
-                    Our larger platforms offer accurate weighing no matter where
-                    the plant is placed on the scale.
-                  </span>
-                </p>
-              </div>
-            </li>
-            <li className="mt-12 lg:mt-0  col-span-1 flex flex-col text-left bg-wayfastGreen rounded-3xl shadow divide-gray-200">
-              <div className=" w-1/4  rounded-full mt-4 ml-8">
-                <img
-                  src="/metrc_compliant.svg"
-                  alt="Picture of the author"
-                  objectPosition="center"
-                  className="h-24 w-24 sm:h-24 "
-                />
-              </div>
-              <div className="mt-2 flex-1 flex flex-col pb-4 px-8">
-                <h3 className="text-xl lg:text-2xl text-white font-medium">
-                  Metrc Compliant.
-                </h3>
-                <p className="text-sm my-4 leading-6 text-white flex flex-col items-left font-light">
-                  <span id="products" className="block">
-                    Legal for Trade, NTEP Certified, and Metrc integrated. Our
-                    smart weighing platform checks all the boxes.
-                  </span>
-                </p>
-              </div>
-            </li>
-          </ul>
-        </main>
-
-        <main className="px-12 py-16 sm:py-20 z-10 relative max-w-7xl mx-auto ">
-          <h1 className="text-black  text-center tracking-wide font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
+          {/* <h1 className="text-black  text-center tracking-wide font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
             Product Line
-          </h1>
+          </h1> */}
           <div className="flex flex-col lg:grid grid-cols-2 gap-16 mt-24">
             <img
               src="/platform_scale.jpg"
@@ -276,36 +253,73 @@ export default function Home() {
             />
             <div className="flex flex-col ">
               <h1 className="text-wayfastGreen text-center lg:text-left tracking-wide font-semibold text-4xl md:text-5xl lg:font-extrabold lg:text-4xl, xl:text-5xl">
-                Platform Scale
+                V5 Platform Scale
               </h1>
-
-              <ul className="marker:text-wayfastGreen list-outside  list-disc mt-12">
-                <li className="py-4 text-lg lg:text-2xl font-semibold">
-                  Automatically Detects RFID Plant Tag
-                </li>
+              <div className="mt-12 flex items-start justify-start">
+                <button
+                  type="submit"
+                  className="mx-2 flex items-center justify-center px-10 py-3 border-2 border-wayfastGreen rounded-2xl text-base bg-wayfastGreen hover:bg-white  text-white hover:text-black md:py-4 "
+                >
+                  REQUEST QUOTE
+                </button>
+              </div>
+              <ul className="marker:text-wayfastGreen list-outside  list-disc mt-12 ml-8">
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
-                  24” x 36” Platform OHAUS Scale
+                  24” x 31.6” Platform OHAUS Scale
                 </li>
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
                   6” Wheels for Maximum Portability
                 </li>
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
-                  Dimensions: 41” x 24” x 41”
-                </li>
-                <li className="py-2 text-lg lg:text-2xl font-semibold">
                   Capacity: 250 lbs
                 </li>
-                <li className="py-2 text-lg lg:text-2xl font-semibold">
+                <li className="py-2 pb-3 border-b  border-gray-700 text-lg lg:text-2xl font-semibold">
                   Recommended floor space: 3&apos; x 5&apos;
                 </li>
               </ul>
+              {platform.map((item, index) => (
+                <div
+                  key={index}
+                  className="ml-8 border-b border-gray-700 py-3 "
+                >
+                  <div className="flex flex-row items-center justify-between">
+                    <h3 className="text-lg lg:text-2xl font-semibold">
+                      {item.title}
+                    </h3>
+                    {platformSelected === index ? (
+                      <button onClick={() => setPlatformSelected(null)}>
+                        <ChevronUpIcon
+                          className="h-6 w-6 text-wayfastGreen"
+                          aria-hidden="true"
+                        />
+                      </button>
+                    ) : (
+                      <button onClick={() => setPlatformSelected(index)}>
+                        <PlusIcon
+                          className="h-6 w-6  text-wayfastGreen"
+                          aria-hidden="true"
+                        />
+                      </button>
+                    )}
+                  </div>
+                  {platformSelected === index && (
+                    <ul className="marker:text-wayfastGreen list-outside  list-disc mt-2 ml-8">
+                      {item.options.map((item, index) => (
+                        <li key={index} className="py-2 text-lg font-semibold">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </main>
 
         <div className=" h-100 relative">
           <Image
-            src="/battery_banner_desk.jpg"
+            src="/banner_battery_desk.jpg"
             alt="Picture of the author"
             layout="fill"
             objectFit="cover"
@@ -316,12 +330,12 @@ export default function Home() {
             <div className="sm:text-center lg:col-span-6 lg:text-left lg:flex flex-col lg:items-start justify-center">
               <h1 className=" text-white text-left mb-4 lg:mb-0 pt-6 lg:font-extralight  tracking-wider	text-4xl md:text-6xl lg:text-5xl, xl:text-6xl">
                 <span className="block ">Harvest in the dark</span>
-                <span className="block">for up to 10+ hrs</span>
+                {/* <span className="block">for up to 10+ hrs</span> */}
               </h1>
             </div>
             <div className="col-span-6 pt-6 border-t lg:border-t-0 lg:border-l border-white lg:pl-8 font-light tracking-wide	">
               <p className="text-white text-2xl">
-                Upgrade your production
+                Upgrade your facility
                 <span className="block pt-4">
                   with our optional 42000 mAh rechargeable battery.
                 </span>
@@ -333,42 +347,85 @@ export default function Home() {
           <div className="flex flex-col-reverse lg:grid grid-cols-2 gap-16 mt-24">
             <div className="flex flex-col ">
               <h1 className="text-wayfastGreen text-center lg:text-left tracking-wide font-semibold text-4xl md:text-5xl lg:font-extrabold lg:text-4xl, xl:text-5xl">
-                Hanging Scale
+                V1 Hanging Scale
               </h1>
-
-              <ul className="marker:text-wayfastGreen list-outside  list-disc mt-12">
-                <li className="py-4 text-lg lg:text-2xl font-semibold">
-                  Automatically Detects RFID Plant Tag
-                </li>
+              <div className="mt-12 flex items-start justify-start">
+                <button
+                  type="submit"
+                  className="mx-2 flex items-center justify-center px-10 py-3 border-2 border-wayfastGreen rounded-2xl text-base bg-wayfastGreen hover:bg-white  text-white hover:text-black md:py-4 "
+                >
+                  REQUEST QUOTE
+                </button>
+              </div>
+              <ul className="marker:text-wayfastGreen list-outside  list-disc mt-12 ml-8">
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
-                  Adjustable Height
+                  Adjustable Height to fit your needs
                 </li>
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
                   3” Wheels for Maximum Portability
                 </li>
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
-                  Dimensions: 16” x 16” x 60”
+                  Extra long hook to keep harvest moving
                 </li>
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
                   Capacity: 30 lbs
                 </li>
-                <li className="py-2 text-lg lg:text-2xl font-semibold">
-                  Recommended floor space: 2&apos; x 2&apos;
+                <li className="py-2 pb-3 border-b  border-gray-700 text-lg lg:text-2xl font-semibold">
+                  Recommended floor space: 3&apos; x 5&apos;
                 </li>
               </ul>
+              {platform.map((item, index) => (
+                <div
+                  key={index}
+                  className="ml-8 border-b border-gray-700 py-3 "
+                >
+                  <div className="flex flex-row items-center justify-between">
+                    <h3 className="text-lg lg:text-2xl font-semibold">
+                      {item.title}
+                    </h3>
+                    {hangingSelected === index ? (
+                      <button onClick={() => setHangingSelected(null)}>
+                        <ChevronUpIcon
+                          className="h-6 w-6 text-wayfastGreen"
+                          aria-hidden="true"
+                        />
+                      </button>
+                    ) : (
+                      <button onClick={() => setHangingSelected(index)}>
+                        <PlusIcon
+                          className="h-6 w-6  text-wayfastGreen"
+                          aria-hidden="true"
+                        />
+                      </button>
+                    )}
+                  </div>
+                  {hangingSelected === index && (
+                    <ul className="marker:text-wayfastGreen list-outside  list-disc mt-2 ml-8">
+                      {item.options.map((item, index) => (
+                        <li key={index} className="py-2 text-lg font-semibold">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
             </div>
-            <img
-              src="/hanging_scale.jpg"
-              alt="Picture of the author"
-              objectPosition="center"
-              className="w-auto lg:w-3/4 h:auto"
-            />
+
+            <div className="flex items-start justify-end">
+              <img
+                src="/hanging_scale.jpg"
+                alt="Picture of the author"
+                objectPosition="center"
+                className="w-auto lg:w-3/4 h:auto"
+              />
+            </div>
           </div>
         </main>
 
         <div className=" h-100 relative">
           <Image
-            src="/testimonial_banner_desk.jpg"
+            src="/banner_testimonial_desk.jpg"
             alt="Picture of the author"
             layout="fill"
             objectFit="cover"
@@ -377,23 +434,21 @@ export default function Home() {
           />
           <main className="px-12 pt-16 sm:pt-20  pb-8 z-10 relative max-w-5xl mx-auto flex flex-col">
             <Image
-              src="/white_logo.svg"
+              src="/claybourne.svg"
               alt="Picture of the author"
               width={100}
-              height={50}
+              height={150}
               className="z-0 rounded-3xl"
             />
             <div className="sm:text-center py-8">
-              <p className="text-lg text-center tracking-wide text-white z-0 md:col-span-4 font-extralight">
-                “What took me 1.5 hours, now takes me 4 minutes”
+              <p className="text-xl text-center tracking-wide text-white z-0 md:col-span-4 font-extralight">
+                "This is the only system that makes any sort of sense!"
               </p>
             </div>
             <div className="text-center text-white">
-              <p className="text-2xl font-semibold tracking-wide">
-                John Bianco
-              </p>
+              <p className="text-2xl font-bold tracking-wide">Brent Barnes</p>
               <p id="contact" className="block text-xl font-light pt-1">
-                Clear Water Collective, Owner
+                COO, Claybourne Co
               </p>
             </div>
           </main>
@@ -404,7 +459,8 @@ export default function Home() {
           className="px-12 py-16 sm:py-20 z-10 relative max-w-4xl mx-auto "
         >
           <h1 className="tracking-tight text-black  text-center  font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
-            Let&apos;s Get In Touch
+            {/* Let&apos;s Get In Touch */}
+            Ready to WayFast?
           </h1>
           <div>
             <h3 className="font-bold text-2xl tracking-tight my-8">
