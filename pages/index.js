@@ -66,7 +66,7 @@ export default function Home() {
           title: " Dimensions:",
           copy: "42” (L) x 24” (W) x 60” (H) + expandable (H)”",
         },
-        { title: " Resolution:", copy: "5 Gram" },
+        { title: " Resolution:", copy: "5 Grams" },
       ],
     },
   ];
@@ -166,7 +166,7 @@ export default function Home() {
 
         <main className="px-12 py-16 sm:py-20 z-10 relative max-w-7xl mx-auto ">
           <h1 className="text-black  text-center tracking-wide font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
-            Harvest compliance. Simplified
+            Harvest compliance. Simplified.
           </h1>
           <div className="hidden md:grid grid-cols-1 md:grid-cols-3 mt-20">
             <div className="col-span-3 mx-40 mt-2">
@@ -369,7 +369,7 @@ export default function Home() {
                     <ul className="marker:text-wayfastGreen list-outside  list-disc mt-2 ml-8">
                       {item.options.map((item, index) => (
                         <li key={index} className="py-2 text-lg font-semibold">
-                          {item.title} :
+                          {item.title}
                           <p className="text-gray-600 text-sm font-normal">
                             {item.copy}
                           </p>
