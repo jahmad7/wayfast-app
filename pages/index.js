@@ -14,7 +14,7 @@ import PageContainer from "../components//pageContainer";
 export default function Home() {
   const [platformSelected, setPlatformSelected] = useState(null);
   const [hangingSelected, setHangingSelected] = useState(null);
-
+  const [hoverIndex, setHoverIndex] = useState(null);
   const {
     register,
     handleSubmit,
@@ -23,44 +23,76 @@ export default function Home() {
   const features = [
     {
       icon: "/features_tag.svg",
-      title: "Efficient (RFID Tag)",
+      title: "Attention to Detail",
       body: "On screen options of 'No tag' or'Broken tag' to record certain plants keeps the harvest moving, in record time!",
     },
     {
-      icon: "/features_accurate.svg",
-      title: "Accurate",
-      body: " Our larger platforms offer accurate weighing no matter where the plant is placed on the scale.",
+      icon: "/features_spanish.svg",
+      title: "En Español",
+      altTitle: "Available in Spanish",
+      body: "Interfaz fácil de usar, soporte en ingles y Español.",
+      altBody:
+        "Our support and easy-to-use interface comes in both English and Spanish",
     },
     {
       icon: "/features_compliant.svg",
-      title: "Compliant",
-      body: " Legal for Trade, NTEP Certified, and Metrc integrated. Our smart weighing platform checks all the boxes.",
-    },
-    {
-      icon: "/features_spanish.svg",
-      title: "Habla Espanol",
-      body: "Lorem Ipsum",
-    },
-    {
-      icon: "/features_data.svg",
-      title: "Local Backup",
-      body: " The onboard computer will capture your harvest data using standard, incremental or batch weighing modes",
-    },
-    {
-      icon: "/features_fast.svg",
-      title: "Fast",
-      body: "Lorem Ipsum",
+      title: "Data Security",
+      body: "Redundant backup layers ensure your data is always safe and secure. No need to worry. ",
     },
   ];
 
   const platform = [
     {
-      title: "Production Modes",
-      options: ["Incremental", "Batch", "Harvest"],
+      title: "Wet & Dry Harvest Modess",
+      options: [
+        {
+          title: "Standard:",
+          copy: "After each successful scan, remove and replace with the next plant. 1,200 plants/hour",
+        },
+        {
+          title: "Incremental:",
+          copy: "Add a new plant to the tote after each successful scan, no need to remove the previous plant. 1,800 plants/hour",
+        },
+        {
+          title: "Batch(Beta):",
+          copy: "Place a tote with up to 25 plants and average out the weight. 25x faster than standard mode.",
+        },
+      ],
     },
     {
-      title: "Dimensions",
-      options: [" Dimensions: 41” x 24” x 41”"],
+      title: "Specifications",
+      options: [
+        {
+          title: " Dimensions:",
+          copy: "42” (L) x 24” (W) x 60” (H) + expandable (H)”",
+        },
+        { title: " Resolution:", copy: "5 Gram" },
+      ],
+    },
+  ];
+  const hanging = [
+    {
+      title: "Wet & Dry Harvest Modess",
+      options: [
+        {
+          title: "Standard:",
+          copy: "After each successful scan, remove and replace with the next plant. 1,200 plants/hour",
+        },
+        {
+          title: "Incremental:",
+          copy: "Add a new plant to the tote after each successful scan, no need to remove the previous plant. 1,800 plants/hour",
+        },
+      ],
+    },
+    {
+      title: "Specifications",
+      options: [
+        {
+          title: " Dimensions:",
+          copy: "16” (L) x 16” (W) x 60” (H) + expandable (H)”",
+        },
+        { title: " Resolution:", copy: " 1 Gram" },
+      ],
     },
   ];
   return (
@@ -134,7 +166,7 @@ export default function Home() {
 
         <main className="px-12 py-16 sm:py-20 z-10 relative max-w-7xl mx-auto ">
           <h1 className="text-black  text-center tracking-wide font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
-            Don&apos;t Beat Around the Bush
+            Harvest compliance. Simplified
           </h1>
           <div className="hidden md:grid grid-cols-1 md:grid-cols-3 mt-20">
             <div className="col-span-3 mx-40 mt-2">
@@ -149,19 +181,29 @@ export default function Home() {
               <h3 className="pt-4 text-center text-black text-3xl font-medium tracking-widest">
                 Weigh
               </h3>
+              <p className="text-center text-gray-700 w-1/2 mx-auto pt-4">
+                Just place the plant. We automatically capture your data
+              </p>
             </div>
             <div className="flex flex-col">
               <h3 className="pt-4 text-center text-black text-3xl font-medium tracking-widest">
                 Repeat
               </h3>
+              <p className="text-center text-gray-700 w-1/2 mx-auto pt-4">
+                Place a new plant every 3 seconds. Clock in at 1,200+ plants per
+                hour.
+              </p>
             </div>
             <div className="flex flex-col">
               <h3 className="pt-4 text-center text-black text-3xl font-medium tracking-widest">
                 Export
               </h3>
+              <p className="text-center text-gray-700 w-1/2 mx-auto pt-4">
+                Upload your harvest file into your preferred software.
+              </p>
             </div>
           </div>
-          <div className="grid md:hidden grid-cols-2 mt-20 ">
+          <div className="grid md:hidden grid-cols-3 mt-20 ">
             <div className="">
               <Image
                 src="/steps_mob.svg"
@@ -172,34 +214,35 @@ export default function Home() {
                 className=" mt-4 -my-auto "
               />
             </div>
-            <div className="col-span-1 flex flex-col gap-44">
+            <div className="col-span-2 flex flex-col gap-32">
               <div className="flex flex-col justify-end">
-                <h3 className="pt-4 text-left  mb-4  text-black text-2xl font-medium tracking-widest">
+                <h3 className="text-left  text-black text-2xl font-medium tracking-widest">
                   Weigh
                 </h3>
+                <p className="text-left text-gray-700 pt-2">
+                  Just place the plant. We automatically capture your data
+                </p>
               </div>
               <div className="flex flex-col justify-end">
-                <h3 className="pt-4 text-left  mb-6  text-black text-2xl font-medium tracking-widest">
+                <h3 className="text-left  pt-1 text-black text-2xl font-medium tracking-widest">
                   Repeat
                 </h3>
+                <p className="text-left text-gray-700 pt-2">
+                  Place a new plant every 3 seconds. Clock in at 1,200+ plants
+                  per hour.
+                </p>
               </div>
               <div className="flex flex-col justify-end">
-                <h3 className="pt-4 text-left  mb-6  text-black text-2xl font-medium tracking-widest">
+                <h3 className="pt-1 text-left   text-black text-2xl font-medium tracking-widest">
                   Export
                 </h3>
+                <p className="text-left text-gray-700 pt-2">
+                  Upload your harvest file into your preferred software.
+                </p>
               </div>
             </div>
           </div>
-          <p className="text-center text-gray-700  mt-12">
-            All of our solutions clock in at 1200 plants per hour to ensure your
-            team&apos;s performance is always optimized.{" "}
-            <span className="lg:block">
-              Whether you need a hanging scale, platform scale, or both. We have
-              the fastest and most accurate solution for you.
-            </span>
-          </p>
         </main>
-
         <div className=" h-100 relative">
           <Image
             src="/banner_features_desk.jpg"
@@ -211,30 +254,40 @@ export default function Home() {
           />
           <main className="px-12 py-16 z-10 relative max-w-7xl mx-auto flex flex-col lg:gap-4">
             <h1 className="text-white  text-center tracking-wide font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
-              Features & Benefits
+              Features &#38; Benefits
             </h1>
             <div className="col-span-12">
-              <div className="grid grid-cols-2 lg:grid-cols-3 mt-12 gap-x-12 lg:gap-x-24 gap-y-12">
+              <div className="grid grid-cols-1 lg:grid-cols-3 mt-12 gap-x-12 lg:gap-x-24 gap-y-12">
                 {features.map((feature, index) => (
-                  <div
+                  <li
                     key={index}
-                    className="flex flex-col items-center lg:items-start justify-start"
+                    onMouseOver={() => setHoverIndex(index)}
+                    onMouseOut={() => setHoverIndex(null)}
+                    className="lg:mt-0  col-span-1 flex flex-col  items-start text-center px-8 bg-white rounded-3xl shadow-xl divide-gray-200"
                   >
-                    <div className="flex  pb-4 md:pl-0 lg:pl-12">
+                    <div className="flex flex-row gap-2 items-center pt-4 ">
                       <img
                         src={feature.icon}
-                        alt="Picture of the author"
-                        objectPosition="center"
-                        className="w-24 sm:h-24"
+                        alt="Icons"
+                        width={70}
+                        height={70}
                       />
+                      <h3 className="text-xl lg:text-2xl text-wayfastGreen font-medium text-left">
+                        {feature.altTitle && hoverIndex === index
+                          ? feature.altTitle
+                          : feature.title}
+                      </h3>
                     </div>
-                    <h3 className=" md:pl-0 lg:pl-12 text-white text-lg lg:text-2xl ml-1 font-bold text-center  lg:text-left tracking-wider ">
-                      {feature.title}
-                    </h3>
-                    <p className=" md:pl-0 lg:pl-12 text-left hidden  md:block pt-4 text-lg text-white font-thin">
-                      {feature.body}
-                    </p>
-                  </div>
+                    <div className="flex-1 flex flex-col pb-4">
+                      <p className="text-sm my-4 leading-6 text-gray-700  flex flex-col text-left">
+                        <span className="block">
+                          {feature.altBody && hoverIndex === index
+                            ? feature.altBody
+                            : feature.body}
+                        </span>
+                      </p>
+                    </div>
+                  </li>
                 ))}
               </div>
             </div>
@@ -268,6 +321,9 @@ export default function Home() {
                   24” x 31.6” Platform OHAUS Scale
                 </li>
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
+                  Legal for Trade, NTEP-certified
+                </li>
+                <li className="py-2 text-lg lg:text-2xl font-semibold">
                   6” Wheels for Maximum Portability
                 </li>
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
@@ -286,6 +342,7 @@ export default function Home() {
                     <h3 className="text-lg lg:text-2xl font-semibold">
                       {item.title}
                     </h3>
+                    <p></p>
                     {platformSelected === index ? (
                       <button onClick={() => setPlatformSelected(null)}>
                         <ChevronUpIcon
@@ -306,7 +363,10 @@ export default function Home() {
                     <ul className="marker:text-wayfastGreen list-outside  list-disc mt-2 ml-8">
                       {item.options.map((item, index) => (
                         <li key={index} className="py-2 text-lg font-semibold">
-                          {item}
+                          {item.title} :
+                          <p className="text-gray-600 text-sm font-normal">
+                            {item.copy}
+                          </p>
                         </li>
                       ))}
                     </ul>
@@ -362,6 +422,9 @@ export default function Home() {
                   Adjustable Height to fit your needs
                 </li>
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
+                  Legal for Trade, NTEP-certified
+                </li>
+                <li className="py-2 text-lg lg:text-2xl font-semibold">
                   3” Wheels for Maximum Portability
                 </li>
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
@@ -374,7 +437,7 @@ export default function Home() {
                   Recommended floor space: 3&apos; x 5&apos;
                 </li>
               </ul>
-              {platform.map((item, index) => (
+              {hanging.map((item, index) => (
                 <div
                   key={index}
                   className="ml-8 border-b border-gray-700 py-3 "
@@ -403,7 +466,8 @@ export default function Home() {
                     <ul className="marker:text-wayfastGreen list-outside  list-disc mt-2 ml-8">
                       {item.options.map((item, index) => (
                         <li key={index} className="py-2 text-lg font-semibold">
-                          {item}
+                          {item.title}{" "}
+                          <p className="text-gray-600 text-sm">{item.copy}</p>
                         </li>
                       ))}
                     </ul>
