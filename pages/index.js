@@ -24,7 +24,7 @@ export default function Home() {
     {
       icon: "/features_tag.svg",
       title: "Attention to Detail",
-      body: "On screen options of 'No tag' or'Broken tag' to record certain plants keeps the harvest moving, in record time!",
+      body: "On screen options of 'No tag' or 'Broken tag' to record certain plants keeps the harvest moving, in record time!",
     },
     {
       icon: "/features_spanish.svg",
@@ -32,7 +32,7 @@ export default function Home() {
       altTitle: "Available in Spanish",
       body: "Interfaz fácil de usar, soporte en ingles y Español.",
       altBody:
-        "Our support and easy-to-use interface comes in both English and Spanish",
+        "Our support and easy-to-use interface comes in both English and Spanish.",
     },
     {
       icon: "/features_compliant.svg",
@@ -43,7 +43,7 @@ export default function Home() {
 
   const platform = [
     {
-      title: "Wet & Dry Harvest Modess",
+      title: "Wet & Dry Harvest Modes",
       options: [
         {
           title: "Standard:",
@@ -72,7 +72,7 @@ export default function Home() {
   ];
   const hanging = [
     {
-      title: "Wet & Dry Harvest Modess",
+      title: "Wet & Dry Harvest Modes",
       options: [
         {
           title: "Standard:",
@@ -182,7 +182,10 @@ export default function Home() {
                 Weigh
               </h3>
               <p className="text-center text-gray-700 w-1/2 mx-auto pt-4">
-                Just place the plant. We automatically capture your data
+                Just place the plant.
+                <span className="block">
+                  We automatically capture your data.
+                </span>
               </p>
             </div>
             <div className="flex flex-col">
@@ -220,7 +223,10 @@ export default function Home() {
                   Weigh
                 </h3>
                 <p className="text-left text-gray-700 pt-2">
-                  Just place the plant. We automatically capture your data
+                  Just place the plant.
+                  <span className="block">
+                    We automatically capture your data.
+                  </span>
                 </p>
               </div>
               <div className="flex flex-col justify-end">
