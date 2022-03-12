@@ -85,7 +85,7 @@ function Blog() {
   return (
     <div>
       <Head>
-        <title>ATG | Blog</title>
+        <title>WayFast | Blog</title>
         <link rel="icon" href="/Bottles_Blue.svg" />
         <meta
           property="og:title"

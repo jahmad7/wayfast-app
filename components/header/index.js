@@ -191,7 +191,7 @@ Leaving: "duration-100 ease-in"
             <div className="mt-6">
               <nav className="grid grid-cols-1 gap-7">
                 <a
-                  href="#products"
+                  href="/#products"
                   className="-m-3 p-3 text-wayfastGreen flex items-center rounded-lg hover:bg-gray-50"
                   s
                 >
@@ -204,7 +204,7 @@ Leaving: "duration-100 ease-in"
                 </a>
 
                 <a
-                  href="#contact"
+                  href="/#contact"
                   className="-m-3 p-3 text-wayfastGreen flex items-center rounded-lg hover:bg-gray-50"
                 >
                   {/* <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md text-white">
@@ -216,7 +216,7 @@ Leaving: "duration-100 ease-in"
                 </a>
 
                 <a
-                  href="/"
+                  href="/blog"
                   className="-m-3 p-3 text-wayfastGreen flex items-center rounded-lg hover:bg-gray-50"
                 >
                   {/* <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md  text-white">

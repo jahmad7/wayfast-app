@@ -27,7 +27,7 @@ const Post = () => {
   return (
     <div>
       <Head>
-        <title>ATG | Blog</title>
+        <title>WayFast | Blog</title>
         <link rel="icon" href="/Bottles_Blue.svg" />
         {/* Global Site Tag (gtag.js) - Google Analytics */}
         <script
