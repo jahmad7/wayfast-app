@@ -470,7 +470,7 @@ export default function Home() {
                   Capacity: 30 lbs
                 </li>
                 <li className="py-2 pb-3 border-b  border-gray-700 text-lg lg:text-2xl font-semibold">
-                  Recommended floor space: 3&apos; x 5&apos;
+                  Recommended floor space: 2&apos; x 2&apos;
                 </li>
               </ul>
               {hanging.map((item, index) => (
