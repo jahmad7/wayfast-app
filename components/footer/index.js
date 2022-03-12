@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import Image from "next/image";
 
 function PageContainer({ children }) {
@@ -23,7 +24,8 @@ function PageContainer({ children }) {
                 <ul className="mt-4 space-y-4">
                   <li>
                     <a
-                      href="/about"
+                      href="/#products"
+                      scroll={true}
                       className="text-base text-white hover:text-gray"
                     >
                       Products
@@ -32,7 +34,7 @@ function PageContainer({ children }) {
 
                   <li>
                     <a
-                      href="/services"
+                      href="/#contact"
                       className="text-base text-white hover:text-gray"
                     >
                       Contact
@@ -41,7 +43,7 @@ function PageContainer({ children }) {
 
                   <li>
                     <a
-                      href="/contact"
+                      href="/blog"
                       className="text-base text-white hover:text-gray"
                     >
                       Blog
@@ -96,7 +98,7 @@ function PageContainer({ children }) {
               </a>
 
               <a
-                href="https://www.facebook.com/6sixpak"
+                href="https://www.facebook.com/GoWayFast"
                 target="_blank"
                 rel="noreferrer"
                 className="text-white hover:text-white"

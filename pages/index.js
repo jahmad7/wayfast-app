@@ -5,21 +5,48 @@ import React, { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import ReactPlayer from "react-player";
-import { useForm } from "react-hook-form";
+import { get, useForm } from "react-hook-form";
 import { PlusIcon, ChevronUpIcon } from "@heroicons/react/outline";
 
 // COMPONENTS
-import PageContainer from "../components//pageContainer";
+import PageContainer from "../components/pageContainer";
 
 export default function Home() {
   const [platformSelected, setPlatformSelected] = useState(null);
   const [hangingSelected, setHangingSelected] = useState(null);
   const [hoverIndex, setHoverIndex] = useState(null);
+  const [submitting, setSubmitting] = useState(false);
+
   const {
     register,
     handleSubmit,
+    getValues,
     formState: { errors },
   } = useForm();
+  async function submit(data) {
+    if (
+      !data.text &&
+      data.product &&
+      data.product?.some((entry) => entry === "other")
+    )
+      return null;
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (res.status === 200) {
+        window.location = "/thankyou";
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   const features = [
     {
       icon: "/features_tag.svg",
@@ -133,7 +160,7 @@ export default function Home() {
             </div>
             <div className="hidden md:flex col-span-6  items-center mt-4 lg:mt-0">
               <ReactPlayer
-                url="https://youtu.be/VB3p1V3oB9k"
+                url="https://www.youtube.com/watch?v=eOtIKVcEmfk"
                 muted
                 loop
                 playing
@@ -143,7 +170,7 @@ export default function Home() {
             </div>
             <div className="md:hidden col-span-6 flex items-center justify-center mt-4 lg:mt-0">
               <ReactPlayer
-                url="https://youtu.be/VB3p1V3oB9k"
+                url="https://www.youtube.com/watch?v=eOtIKVcEmfk"
                 muted
                 loop
                 playing
@@ -299,7 +326,10 @@ export default function Home() {
             </div>
           </main>
         </div>
-        <main className="px-12 py-16 sm:py-20 z-10 relative max-w-7xl mx-auto ">
+        <main
+          id="products"
+          className="px-12 py-16 sm:py-20 z-10 relative max-w-7xl mx-auto "
+        >
           {/* <h1 className="text-black  text-center tracking-wide font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
             Product Line
           </h1> */}
@@ -315,12 +345,12 @@ export default function Home() {
                 V5 Platform Scale
               </h1>
               <div className="mt-12 flex items-start justify-start">
-                <button
-                  type="submit"
+                <a
+                  href="#contact"
                   className="mx-2 flex items-center justify-center px-10 py-3 border-2 border-wayfastGreen rounded-2xl text-base bg-wayfastGreen hover:bg-white  text-white hover:text-black md:py-4 "
                 >
                   REQUEST QUOTE
-                </button>
+                </a>
               </div>
               <ul className="marker:text-wayfastGreen list-outside  list-disc mt-12 ml-8">
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
@@ -416,12 +446,12 @@ export default function Home() {
                 V1 Hanging Scale
               </h1>
               <div className="mt-12 flex items-start justify-start">
-                <button
-                  type="submit"
+                <a
+                  href="#contact"
                   className="mx-2 flex items-center justify-center px-10 py-3 border-2 border-wayfastGreen rounded-2xl text-base bg-wayfastGreen hover:bg-white  text-white hover:text-black md:py-4 "
                 >
                   REQUEST QUOTE
-                </button>
+                </a>
               </div>
               <ul className="marker:text-wayfastGreen list-outside  list-disc mt-12 ml-8">
                 <li className="py-2 text-lg lg:text-2xl font-semibold">
@@ -525,11 +555,10 @@ export default function Home() {
         </div>
 
         <form
-          // onSubmit={handleSubmit(submit)}
+          onSubmit={handleSubmit(submit)}
           className="px-12 py-16 sm:py-20 z-10 relative max-w-4xl mx-auto "
         >
           <h1 className="tracking-tight text-black  text-center  font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
-            {/* Let&apos;s Get In Touch */}
             Ready to WayFast?
           </h1>
           <div>
@@ -542,7 +571,7 @@ export default function Home() {
                   type="text"
                   autoComplete="given-name"
                   className={`shadow-sm p-2 block w-full sm:text-sm border ${
-                    errors.name ? "border-red" : "border-wayfastGreen"
+                    errors.name ? "border-red-600" : "border-wayfastGreen"
                   } focus:outline-none focus:border-atgBlue rounded-xl`}
                   placeholder="FULL NAME"
                   {...register("name", { required: true })}
@@ -551,7 +580,7 @@ export default function Home() {
                   <svg
                     className={`${
                       errors.name ? "visible" : "hidden"
-                    } h-5 w-5 text-red`}
+                    } h-5 w-5 text-red-600`}
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
@@ -568,9 +597,9 @@ export default function Home() {
               <div className="relative">
                 <input
                   type="text"
-                  autoComplete="given-name"
+                  autoComplete="tel"
                   className={`shadow-sm p-2 block w-full sm:text-sm border ${
-                    errors.phone ? "border-red" : "border-wayfastGreen"
+                    errors.phone ? "border-red-600" : "border-wayfastGreen"
                   } focus:outline-none focus:border-atgBlue rounded-xl`}
                   placeholder="PHONE NUMBER"
                   {...register("phone", { required: true })}
@@ -579,7 +608,7 @@ export default function Home() {
                   <svg
                     className={`${
                       errors.phone ? "visible" : "hidden"
-                    } h-5 w-5 text-red`}
+                    } h-5 w-5 text-red-600`}
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
@@ -596,9 +625,9 @@ export default function Home() {
               <div className="relative">
                 <input
                   type="text"
-                  autoComplete="given-name"
+                  autoComplete="email"
                   className={`shadow-sm p-2 block w-full sm:text-sm border ${
-                    errors.email ? "border-red" : "border-wayfastGreen"
+                    errors.email ? "border-red-600" : "border-wayfastGreen"
                   } focus:outline-none focus:border-atgBlue rounded-xl`}
                   placeholder="EMAIL ADDRESS"
                   {...register("email", { required: true })}
@@ -607,7 +636,7 @@ export default function Home() {
                   <svg
                     className={`${
                       errors.email ? "visible" : "hidden"
-                    } h-5 w-5 text-red`}
+                    } h-5 w-5 text-red-600`}
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
@@ -624,9 +653,9 @@ export default function Home() {
               <div className="relative">
                 <input
                   type="text"
-                  autoComplete="given-name"
+                  autoComplete="organization"
                   className={`shadow-sm p-2 block w-full sm:text-sm border ${
-                    errors.company ? "border-red" : "border-wayfastGreen"
+                    errors.company ? "border-red-600" : "border-wayfastGreen"
                   } focus:outline-none focus:border-atgBlue rounded-xl`}
                   placeholder="COMPANY NAME"
                   {...register("company", { required: true })}
@@ -635,7 +664,7 @@ export default function Home() {
                   <svg
                     className={`${
                       errors.company ? "visible" : "hidden"
-                    } h-5 w-5 text-red`}
+                    } h-5 w-5 text-red-600`}
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
@@ -654,7 +683,7 @@ export default function Home() {
               2. What are you looking for?
             </h3>
             {errors.product && (
-              <p className=" text-lg tracking-wide  pt-2 lg:pt-1` text-red">
+              <p className=" text-lg tracking-wide  pt-2 lg:pt-1` text-red-600">
                 A product Selection is Required!
               </p>
             )}
@@ -662,7 +691,7 @@ export default function Home() {
               <div className="flex flex-row items-center mt-3">
                 <input
                   type="checkbox"
-                  value="cartridge"
+                  value="hanging"
                   {...register("product", { required: true })}
                   className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
                 />
@@ -675,7 +704,7 @@ export default function Home() {
               <div className="flex items-center mt-3">
                 <input
                   type="checkbox"
-                  value="bottles"
+                  value="platform"
                   {...register("product", { required: true })}
                   className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
                 />
@@ -688,7 +717,7 @@ export default function Home() {
               <div className="flex items-center mt-3 col-span-3">
                 <input
                   type="checkbox"
-                  value="balms"
+                  value="other"
                   {...register("product", { required: true })}
                   className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
                 />
@@ -699,9 +728,17 @@ export default function Home() {
                 </div>
                 <input
                   type="text"
-                  autoComplete="given-name"
+                  {...register("text", {
+                    required:
+                      getValues("product") &&
+                      getValues("product")?.some((entry) => entry === "other"),
+                  })}
                   className={`shadow-sm p-2 block ml-4 w-full sm:text-sm border ${
-                    errors.email ? "border-red" : "border-wayfastGreen"
+                    !getValues("text") &&
+                    getValues("product") &&
+                    getValues("product")?.some((entry) => entry === "other")
+                      ? "border-red-600"
+                      : "border-wayfastGreen"
                   } focus:outline-none focus:border-atgBlue rounded-xl`}
                   placeholder="Type..."
                 />
@@ -711,8 +748,25 @@ export default function Home() {
           <div className="mt-12 flex items-center justify-center">
             <button
               type="submit"
+              disabled={submitting}
               className="mx-2 flex items-center justify-center px-10 py-3 border-2 border-wayfastGreen rounded-2xl text-base bg-wayfastGreen hover:bg-white  text-white hover:text-black md:py-4 "
             >
+              {submitting && (
+                <svg
+                  className="animate-spin h-5 w-5 text-white self-center mr-2"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 40 40"
+                  enableBackground="new 0 0 40 40"
+                  xml="preserve"
+                >
+                  <path
+                    opacity="0.2"
+                    d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946 s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634 c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"
+                  />
+                  <path d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0 C22.32,8.481,24.301,9.057,26.013,10.047z" />
+                </svg>
+              )}{" "}
               SEND REQUEST
             </button>
           </div>

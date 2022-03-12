@@ -58,7 +58,7 @@ export default function Home() {
           </a>
 
           <a
-            href="https://www.facebook.com/6sixpak"
+            href="https://www.facebook.com/GoWayFast"
             target="_blank"
             rel="noreferrer"
             className="text-white hover:text-white"
@@ -116,7 +116,7 @@ export default function Home() {
         </div>
         <nav className="hidden lg:flex flex-row space-x-8  justify-end items-center">
           <a
-            href="#products"
+            href="/#products"
             scroll={true}
             className={`${
               exactPath === "about" ? "font-semibold" : "font-thin"
@@ -125,7 +125,7 @@ export default function Home() {
             Products
           </a>
           <a
-            href="#contact"
+            href="/#contact"
             className={`${
               exactPath === "services" ? "font-semibold" : "font-thin"
             }  text-base text-white hover:text-yellow`}
@@ -133,7 +133,7 @@ export default function Home() {
             Contact
           </a>
           <a
-            href="/"
+            href="/blog"
             className={`${
               exactPath === "contact" ? "font-semibold" : "font-thin"
             }  text-base text-white hover:text-yellow`}
