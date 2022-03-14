@@ -26,7 +26,7 @@ function PageContainer({ children }) {
                     <a
                       href="/#products"
                       scroll={true}
-                      className="text-base text-white hover:text-gray"
+                      className="text-base text-white  hover:font-medium"
                     >
                       Products
                     </a>
@@ -35,7 +35,7 @@ function PageContainer({ children }) {
                   <li>
                     <a
                       href="/#contact"
-                      className="text-base text-white hover:text-gray"
+                      className="text-base text-white  hover:font-medium"
                     >
                       Contact
                     </a>
@@ -44,7 +44,7 @@ function PageContainer({ children }) {
                   <li>
                     <a
                       href="/blog"
-                      className="text-base text-white hover:text-gray"
+                      className="text-base text-white  hover:font-medium"
                     >
                       Blog
                     </a>
@@ -130,7 +130,7 @@ function PageContainer({ children }) {
           <p className="text-base text-white text-center">
             &copy; 2022 Powered by{" "}
             <a
-              className="hover:text-gray"
+              className=" hover:font-medium"
               href="https://castleclock.com/"
               target="_blank"
               rel="noreferrer"

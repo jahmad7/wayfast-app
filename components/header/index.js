@@ -120,7 +120,7 @@ export default function Home() {
             scroll={true}
             className={`${
               exactPath === "about" ? "font-semibold" : "font-thin"
-            }  text-base text-white hover:text-yellow`}
+            }  text-base text-white hover:font-medium`}
           >
             Products
           </a>
@@ -128,7 +128,7 @@ export default function Home() {
             href="/#contact"
             className={`${
               exactPath === "services" ? "font-semibold" : "font-thin"
-            }  text-base text-white hover:text-yellow`}
+            }  text-base text-white  hover:font-medium`}
           >
             Contact
           </a>
@@ -136,7 +136,7 @@ export default function Home() {
             href="/blog"
             className={`${
               exactPath === "contact" ? "font-semibold" : "font-thin"
-            }  text-base text-white hover:text-yellow`}
+            }  text-base text-white  hover:font-medium`}
           >
             Blog
           </a>
