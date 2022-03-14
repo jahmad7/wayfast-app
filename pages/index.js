@@ -346,10 +346,10 @@ export default function Home() {
               </h1>
               <div className="mt-12 flex items-start justify-start">
                 <a
-                  href="#contact"
+                  href="/demo"
                   className="mx-2 flex items-center justify-center px-10 py-3 border-2 border-wayfastGreen rounded-2xl text-base bg-wayfastGreen hover:bg-white  text-white hover:text-black md:py-4 "
                 >
-                  REQUEST QUOTE
+                  BOOK DEMO
                 </a>
               </div>
               <ul className="marker:text-wayfastGreen list-outside  list-disc mt-12 ml-8">
@@ -447,10 +447,10 @@ export default function Home() {
               </h1>
               <div className="mt-12 flex items-start justify-start">
                 <a
-                  href="#contact"
+                  href="/demo"
                   className="mx-2 flex items-center justify-center px-10 py-3 border-2 border-wayfastGreen rounded-2xl text-base bg-wayfastGreen hover:bg-white  text-white hover:text-black md:py-4 "
                 >
-                  REQUEST QUOTE
+                  BOOK DEMO
                 </a>
               </div>
               <ul className="marker:text-wayfastGreen list-outside  list-disc mt-12 ml-8">
