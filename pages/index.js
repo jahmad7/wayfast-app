@@ -64,7 +64,7 @@ export default function Home() {
     {
       icon: "/features_compliant.svg",
       title: "Data Security",
-      body: "Redundant backup layers ensure your data is always safe and secure. No need to worry. ",
+      body: "Redundant backup layers ensure your data is always safe and secure.",
     },
   ];
 
@@ -104,10 +104,6 @@ export default function Home() {
         {
           title: "Standard:",
           copy: "After each successful scan, remove and replace with the next plant. 1,200 plants/hour",
-        },
-        {
-          title: "Incremental:",
-          copy: "Add a new plant to the tote after each successful scan, no need to remove the previous plant. 1,800 plants/hour",
         },
       ],
     },
