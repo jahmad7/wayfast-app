@@ -28,7 +28,7 @@ const Post = () => {
   return (
     <div>
       <Head>
-        <title>{responseData?.seo_title}</title>
+        <title>WayFast | {responseData?.seo_title}</title>
         <meta name="description" content={responseData?.summary} />
         <link rel="icon" href="/Bottles_Blue.svg" />
         {/* Global Site Tag (gtag.js) - Google Analytics */}
