@@ -24,10 +24,12 @@ const Post = () => {
     if (post) fetchPosts();
   }, [post]);
 
+  console.log(responseData);
   return (
     <div>
       <Head>
-        <title>WayFast | Blog</title>
+        <title>{responseData?.seo_title}</title>
+        <meta name="description" content={responseData?.summary} />
         <link rel="icon" href="/Bottles_Blue.svg" />
         {/* Global Site Tag (gtag.js) - Google Analytics */}
         <script
@@ -57,11 +59,11 @@ const Post = () => {
           property="twitter:card"
           content={responseData?.featured_image_alt}
         />
-        <meta property="twitter:site" content="ATG Pharma" />
-        <meta property="twitter:creator" content="ATG Pharma" />
-        <meta property="twitter:title" content={responseData?.seo_title} />
-        <meta property="twitter:description" content={responseData?.summary} />
-        <meta property="twitter:image" content={responseData?.featured_image} />
+        <meta property="twitter:domain" content="gowayfast.com" />
+        <meta property="twitter:url" content="gowayfast.com" />
+        <meta name="twitter:title" content={responseData?.seo_title} />
+        <meta name="twitter:description" content={responseData?.summary} />
+        <meta name="twitter:image" content={responseData?.featured_image} />
       </Head>
       <PageContainer>
         <div className="relative py-16 bg-white overflow-hidden">

@@ -87,13 +87,14 @@ function Blog() {
       <Head>
         <title>WayFast | Blog</title>
         <link rel="icon" href="/Bottles_Blue.svg" />
-        <meta
-          property="og:title"
-          content="ATG Pharma - Industry Updates &#38; Equipment Insights"
-        />
+
         <meta
           property="og:description"
-          content="ATG Pharma news, industry updates, equipment insights. Learn about filling equipment and CPG packaging machines."
+          content="WayFast news, industry updates, equipment insights."
+        />
+        <meta
+          name="description"
+          content="WayFast news, industry updates, equipment insights."
         />
         {/* Global Site Tag (gtag.js) - Google Analytics */}
         <script
