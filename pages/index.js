@@ -62,7 +62,7 @@ export default function Home() {
         "Our support and easy-to-use interface comes in both English and Spanish.",
     },
     {
-      icon: "/features_compliant.svg",
+      icon: "/features_data.svg",
       title: "Data Security",
       body: "Redundant backup layers ensure your data is always safe and secure.",
     },
@@ -544,7 +544,7 @@ export default function Home() {
                 "This is the only system that makes any sort of sense!"
               </p>
             </div>
-            <div className="text-center text-white">
+            <div className="text-center text-white pb-12">
               <p className="text-2xl font-bold tracking-wide">Brent Barnes</p>
               <p id="contact" className="block text-xl font-light pt-1">
                 COO, Claybourne Co
