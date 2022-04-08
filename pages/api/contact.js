@@ -8,7 +8,7 @@ export default async (req, res) => {
   const products = product.join(",");
   let message = `${name} at company ${company} requested a Quote for products : ${products}, ${
     text && `text: ${text}`
-  }. their phone number is ${phone}`;
+  }. their email is ${email} | their phone number is ${phone}`;
   const mg = mailgun({
     apiKey: "9ee6d852c11c8d98abe99bd69ee8a9ca-915161b7-32a02f88",
     domain: "mgx.atgpharma.com",
