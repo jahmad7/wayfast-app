@@ -2,14 +2,14 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
-import Head from "next/head";
 import Image from "next/image";
 import ReactPlayer from "react-player";
-import { get, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { PlusIcon, ChevronUpIcon } from "@heroicons/react/outline";
 
 // COMPONENTS
 import PageContainer from "../components/pageContainer";
+import SEOHead from "../components/seo";
 
 export default function Home() {
   const [platformSelected, setPlatformSelected] = useState(null);
@@ -120,14 +120,13 @@ export default function Home() {
   ];
   return (
     <div>
-      <Head>
-        <title>WayFast</title>
-        <meta
-          name="description"
-          content="Cannabis Cultivation Scales. Harvest compliance. Simplified."
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEOHead
+        data={{
+          title: "WayFast | Cannabis Cultivation Smart Scales",
+          description:
+            "WayFast Cannabis Cultivation Smart Scales - Harvest compliance. Simplified.",
+        }}
+      />
       <PageContainer>
         <div className=" h-100 relative">
           <Image

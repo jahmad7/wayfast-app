@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Head from "next/head";
 import Link from "next/link";
 
 import Butter from "buttercms";
 
 // COMPONENTS
 import PageContainer from "../../components/pageContainer";
+import SEOHead from "../../components/seo";
 
 function Blog() {
   const butter = Butter("f1c6a38312c618e1f8299a0d0973d5589ba0efdf");
@@ -84,34 +84,13 @@ function Blog() {
 
   return (
     <div>
-      <Head>
-        <title>WayFast | Blog</title>
-        <link rel="icon" href="/Bottles_Blue.svg" />
-
-        <meta
-          property="og:description"
-          content="WayFast news, industry updates, equipment insights."
-        />
-        <meta
-          name="description"
-          content="WayFast news, industry updates, equipment insights."
-        />
-        {/* Global Site Tag (gtag.js) - Google Analytics */}
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.GA_TRACKING_ID}');
-          `,
-          }}
-        />
-      </Head>
+      <SEOHead
+        data={{
+          title: "WayFast Blog | Cannabis Industry News ",
+          description:
+            "Cannabis Cultivation News & Articles | learn about cannabis harvesting, Metrc-compliance, RFID tags, and more.",
+        }}
+      />
 
       <PageContainer>
         <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
