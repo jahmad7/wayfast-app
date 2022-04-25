@@ -31,15 +31,6 @@ function SEO({ data }) {
       `,
         }}
       />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `window.pipedriveLeadboosterConfig = {base: 'leadbooster-chat.pipedrive.com',companyId: 1043272,playbookUuid: 'a6b15bd7-bb54-465c-bbba-8ddcd7a18270',version: 2};(function () {var w = window;if (w.LeadBooster) {console.warn('LeadBooster already exists');} else {w.LeadBooster = {q: [],on: function (n, h) {this.q.push({ t: 'o', n: n, h: h });},trigger: function (n) {this.q.push({ t: 't', n: n });},};}})()`,
-        }}
-      />
-      <script
-        src="https://leadbooster-chat.pipedrive.com/assets/loader.js"
-        async
-      ></script>
     </Head>
   );
 }
