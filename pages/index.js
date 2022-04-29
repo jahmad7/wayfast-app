@@ -420,19 +420,19 @@ export default function Home() {
             objectPosition="center"
             className="z-0"
           />
-          <main className="px-12 py-16 sm:py-20 z-10 relative max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-12 lg:gap-4">
-            <div className="sm:text-center lg:col-span-6 lg:text-left lg:flex flex-col lg:items-start justify-center">
-              <h1 className=" text-white text-left mb-4 lg:mb-0 pt-6 lg:font-extralight  tracking-wider	text-4xl md:text-6xl lg:text-5xl, xl:text-6xl">
-                <span className="block ">Harvest in the dark</span>
-                {/* <span className="block">for up to 10+ hrs</span> */}
+          <main className="px-12 py-16 sm:py-20 z-10 relative max-w-7xl mx-auto flex flex-col ">
+            <div className="sm:text-center lg:col-span-6 lg:text-left lg:flex flex-col lg:items-center justify-center">
+              <h1 className=" text-white text-center mb-4 lg:mb-0 pt-6 text-4xl md:text-6xl lg:text-5xl, xl:text-6xl font-semibold">
+                Limited Time Offer!
               </h1>
-            </div>
-            <div className="col-span-6 pt-6 border-t lg:border-t-0 lg:border-l border-white lg:pl-8 font-light tracking-wide	">
-              <p className="text-white text-2xl">
-                Upgrade your facility
-                <span className="block pt-4">
-                  with our optional 42000 mAh rechargeable battery.
+              <p className=" text-white text-center mb-4 lg:mb-0 pt-6 font-extralight  	text-4xl md:text-6xl lg:text-5xl, xl:text-6xl">
+                Finalize Your Order Before May 31st
+                <span className="block">
+                  and get <span className="font-semibold">$1,000 off</span>
                 </span>
+              </p>
+              <p className=" text-white text-center  pt-6 lg:font-extralight  	text-sm">
+                Conditions Apply *
               </p>
             </div>
           </main>
@@ -521,40 +521,87 @@ export default function Home() {
           </div>
         </main>
 
-        <div className=" h-100 relative">
-          <Image
-            src="/banner_testimonial_desk.jpg"
-            alt="Picture of the author"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            className="z-0"
-          />
-          <main className="px-12 pt-16 sm:pt-20  pb-8 z-10 relative max-w-5xl mx-auto flex flex-col">
+        <main className="px-12 py-8 sm:py-12 z-10 relative max-w-6xl mx-auto border overflow-hidden  rounded-3xl mb-4">
+          <div className=" rounded-lg">
             <Image
-              src="/claybourne.svg"
+              src="/banner_testimonial_desk.jpg"
               alt="Picture of the author"
-              width={100}
-              height={150}
-              className="z-0 rounded-3xl"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+              className="z-0"
             />
-            <div className="sm:text-center py-8">
-              <p className="text-xl text-center tracking-wide text-white z-0 md:col-span-4 font-extralight">
-                "This is the only system that makes any sort of sense!"
+          </div>
+          <div className="relative z-30 flex flex-col lg:grid grid-cols-3">
+            <div className="hidden lg:flex flex-col items-center justify-center">
+              <img
+                src="./battery_white.svg"
+                alt="Icons"
+                width={160}
+                height={160}
+              />
+            </div>
+            <div className="col-span-2 lg:border-l border-white pl-8">
+              <h3 className=" text-white flex flex-row gap-2 text-left mb-4 lg:mb-0 tracking-wide font-semibold text-3xl md:text-6xl  lg:text-5xl, xl:text-6xl">
+                <div className="lg:hidden flex flex-col items-center justify-center">
+                  <img
+                    src="./battery_white.svg"
+                    alt="Icons"
+                    width={100}
+                    height={100}
+                  />
+                </div>
+                Harvest In The Dark
+              </h3>
+              <p className="text-white text-2xl my-4 font-light leading-7  tracking-wide flex flex-col text-left">
+                Upgrade your production with our
+                <span className="pt-1 block">
+                  <span className="font-bold">42,000 mAh</span> rechargeable
+                  Battery
+                </span>
               </p>
             </div>
-            <div className="text-center text-white pb-12">
-              <p className="text-2xl font-bold tracking-wide">Brent Barnes</p>
-              <p id="contact" className="block text-xl font-light pt-1">
+          </div>
+        </main>
+
+        <main className="px-12 py-16 sm:py-20 z-10 relative max-w-7xl mx-auto ">
+          <h1 className="text-black  text-center tracking-wide font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
+            What Our Partners Say
+          </h1>
+          <div className="fle flex-col lg:grid grid-cols-3 pt-2 ">
+            <div>
+              <Image
+                src="/claybourne.co_black.svg"
+                alt="Picture of the author"
+                width={250}
+                height={250}
+                className="z-0 rounded-3xl"
+              />
+            </div>
+            <div className="col-span-2 flex flex-col items-start justify-start">
+              <Image
+                src="/quote_mark.svg"
+                alt="Picture of the author"
+                width={80}
+                height={80}
+                className="z-0 rounded-3xl"
+              />
+              <p className="ml-3 text-xl text-left tracking-wide text-gray-900 z-0 font-extralight">
+                This is the only system that makes any sort of sense!
+              </p>
+              <p className="ml-3  text-2xl font-bold tracking-wide pt-4">
+                Brent Barnes
+              </p>
+              <p className="ml-3  block text-xl font-light pt-1">
                 COO, Claybourne Co
               </p>
             </div>
-          </main>
-        </div>
+          </div>
+        </main>
 
         <form
           onSubmit={handleSubmit(submit)}
-          className="px-12 py-16 sm:py-20 z-10 relative max-w-4xl mx-auto "
+          className="px-12 pb-16 sm:pb-20 z-10 relative max-w-4xl mx-auto "
         >
           <h1 className="tracking-tight text-black  text-center  font-bold text-4xl md:text-6xl lg:font-extrabold lg:text-5xl, xl:text-6xl">
             Ready to WayFast?
