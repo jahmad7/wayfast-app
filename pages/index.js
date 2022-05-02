@@ -592,7 +592,7 @@ export default function Home() {
               <p className="ml-3  text-2xl font-bold tracking-wide pt-4">
                 Brent Barnes
               </p>
-              <p className="ml-3  block text-xl font-light pt-1">
+              <p id="contact" className="ml-3  block text-xl font-light pt-1">
                 COO, Claybourne Co
               </p>
             </div>
