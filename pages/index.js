@@ -411,7 +411,7 @@ export default function Home() {
           </div>
         </main>
 
-        <div className=" h-100 relative">
+        {/* <div className=" h-100 relative">
           <Image
             src="/banner_battery_desk.jpg"
             alt="Picture of the author"
@@ -436,9 +436,9 @@ export default function Home() {
               </p>
             </div>
           </main>
-        </div>
+        </div> */}
         <main className="px-12 py-16 sm:py-20 z-10 relative max-w-7xl mx-auto ">
-          <div className="flex flex-col-reverse lg:grid grid-cols-2 gap-16 mt-24">
+          <div className="flex flex-col-reverse lg:grid grid-cols-2 gap-16 ">
             <div className="flex flex-col ">
               <h1 className="text-wayfastGreen text-center lg:text-left tracking-wide font-semibold text-4xl md:text-5xl lg:font-extrabold lg:text-4xl, xl:text-5xl">
                 V1 Hanging Scale
