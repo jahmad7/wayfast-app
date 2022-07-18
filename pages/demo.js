@@ -14,7 +14,7 @@ function Booking() {
         <div className="container overflow-visible  max-w-7xl mx-auto h-screen">
           <iframe
             title="scheduling ATG appointments"
-            src="https://calendly.com/gowayfast/15min"
+            src="https://calendly.com/ariawayfast/wayfastdemo"
             width="100%"
             height="100%"
             frameBorder="0"
