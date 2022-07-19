@@ -342,12 +342,18 @@ export default function Home() {
               <h1 className="text-wayfastGreen text-center lg:text-left tracking-wide font-semibold text-4xl md:text-5xl lg:font-extrabold lg:text-4xl, xl:text-5xl">
                 V5 Platform Scale
               </h1>
-              <div className="mt-12 flex items-start justify-start">
+              <div className="mt-12 flex gap-4 lg:flex-row  flex-col items-start justify-start">
                 <a
                   href="/demo"
                   className="mx-2 flex items-center justify-center px-10 py-3 border-2 border-wayfastGreen rounded-2xl text-base bg-wayfastGreen hover:bg-white  text-white hover:text-black md:py-4 "
                 >
                   BOOK DEMO
+                </a>
+                <a
+                  href="/harvest-calculator"
+                  className="mx-2 flex items-center justify-center px-10 py-3 border-2 border-wayfastGreen rounded-2xl text-base bg-wayfastGreen hover:bg-white  text-white hover:text-black md:py-4 "
+                >
+                  SEE SAVINGS
                 </a>
               </div>
               <ul className="marker:text-wayfastGreen list-outside  list-disc mt-12 ml-8">
@@ -443,12 +449,18 @@ export default function Home() {
               <h1 className="text-wayfastGreen text-center lg:text-left tracking-wide font-semibold text-4xl md:text-5xl lg:font-extrabold lg:text-4xl, xl:text-5xl">
                 V1 Hanging Scale
               </h1>
-              <div className="mt-12 flex items-start justify-start">
+              <div className="mt-12 flex gap-4 lg:flex-row  flex-col items-start justify-start">
                 <a
                   href="/demo"
                   className="mx-2 flex items-center justify-center px-10 py-3 border-2 border-wayfastGreen rounded-2xl text-base bg-wayfastGreen hover:bg-white  text-white hover:text-black md:py-4 "
                 >
                   BOOK DEMO
+                </a>
+                <a
+                  href="/harvest-calculator"
+                  className="mx-2 flex items-center justify-center px-10 py-3 border-2 border-wayfastGreen rounded-2xl text-base bg-wayfastGreen hover:bg-white  text-white hover:text-black md:py-4 "
+                >
+                  SEE SAVINGS
                 </a>
               </div>
               <ul className="marker:text-wayfastGreen list-outside  list-disc mt-12 ml-8">

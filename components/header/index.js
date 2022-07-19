@@ -132,7 +132,7 @@ export default function Home() {
           </button>
         </div>
         <nav className="hidden lg:flex flex-row space-x-8  justify-end items-center">
-          <a
+          {/* <a
             href="/#products"
             scroll={true}
             className={`${
@@ -140,7 +140,7 @@ export default function Home() {
             }  text-base text-white hover:font-medium`}
           >
             Products
-          </a>
+          </a> */}
           <a
             href="/#contact"
             className={`${
@@ -150,9 +150,17 @@ export default function Home() {
             Contact
           </a>
           <a
+            href="/harvest-calculator"
+            className={`${
+              exactPath === "harvest-calculator" ? "font-semibold" : "font-thin"
+            }  text-base text-white  hover:font-medium`}
+          >
+            Calculator
+          </a>
+          <a
             href="/blog"
             className={`${
-              exactPath === "contact" ? "font-semibold" : "font-thin"
+              exactPath === "blog" ? "font-semibold" : "font-thin"
             }  text-base text-white  hover:font-medium`}
           >
             Blog
@@ -160,7 +168,7 @@ export default function Home() {
           <div className="flex items-center justify-center">
             <a
               href="/demo"
-              className=" text-sm mx-2 flex items-center justify-center px-5 py-2 border-2 rounded-2xl leading-2 bg-white hover:bg-wayfastGreen  text-gray-700 hover:text-white  "
+              className="whitespace-nowrap text-sm mx-2 flex items-center justify-center px-5 py-2 border-2 rounded-2xl leading-2 bg-white hover:bg-wayfastGreen  text-gray-700 hover:text-white  "
             >
               BOOK DEMO
             </a>
@@ -249,6 +257,18 @@ Leaving: "duration-100 ease-in"
                   </div> */}
                   <div className="ml-4 text-base font-medium text-atgBlue">
                     Blog
+                  </div>
+                </a>
+
+                <a
+                  href="/harvest-calculator"
+                  className="-m-3 p-3 text-wayfastGreen flex items-center rounded-lg hover:bg-gray-50"
+                >
+                  {/* <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md  text-white">
+                    <img src="/mobile_header_contact_faq.svg" />
+                  </div> */}
+                  <div className="ml-4 text-base font-medium text-atgBlue">
+                    Calculator
                   </div>
                 </a>
 
