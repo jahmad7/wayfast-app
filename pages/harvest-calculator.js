@@ -87,6 +87,7 @@ function Calculator() {
                 </span>{" "}
                 Monthly Savings
               </h3>
+              <p className="text-right text-gray-900 text-sm">monthly costs</p>
             </div>
 
             <div className="flex flex-col gap-8">
