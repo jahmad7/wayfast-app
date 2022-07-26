@@ -8,7 +8,7 @@ function Booking() {
     <div>
       <Head>
         <title>WayFast | Demo</title>
-        <link rel="icon" href="/Bottles_Blue.svg" />
+        <link rel="icon" href="/logo.ico" />
       </Head>
       <PageContainer>
         <div className="container overflow-visible  max-w-7xl mx-auto h-screen">

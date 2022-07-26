@@ -7,7 +7,7 @@ function SEO({ data }) {
     <Head>
       <title>{data.title}</title>
       <meta name="description" content={data.description} />
-      <link rel="icon" href="/Bottles_Blue.svg" />
+      <link rel="icon" href="/logo.ico" />
 
       <meta property="og:type" content="website" />
       <meta property="og:title" content={data.title} />

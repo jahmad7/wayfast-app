@@ -19,7 +19,7 @@ export default class Post extends React.Component {
         <Head>
           <title>WayFast | {post?.seo_title}</title>
           <meta name="description" content={post?.summary} />
-          <link rel="icon" href="/Bottles_Blue.svg" />
+          <link rel="icon" href="/logo.ico" />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async

@@ -44,7 +44,7 @@ function Calculator() {
     <div>
       <Head>
         <title>ATG | Harvest Calculator</title>
-        <link rel="icon" href="/Bottles_Blue.svg" />
+        <link rel="icon" href="/logo.ico" />
         {/* Global Site Tag (gtag.js) - Google Analytics */}
         <script
           async
