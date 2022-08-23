@@ -15,7 +15,7 @@ export default async (req, res) => {
   });
 
   const clientData = {
-    from: "ATG Pharma <postmaster@mgx.atgpharma.com>",
+    from: "WAYFAST <postmaster@mgx.atgpharma.com>",
     to: "aria@gowayfast.com",
     subject: "New WayFast Request Received",
     text: message,

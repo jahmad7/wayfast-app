@@ -43,7 +43,7 @@ function Calculator() {
   return (
     <div>
       <Head>
-        <title>ATG | Harvest Calculator</title>
+        <title>WayFast | Harvest Calculator</title>
         <link rel="icon" href="/logo.ico" />
         {/* Global Site Tag (gtag.js) - Google Analytics */}
         <script

@@ -13,7 +13,7 @@ function Booking() {
       <PageContainer>
         <div className="container overflow-visible  max-w-7xl mx-auto h-screen">
           <iframe
-            title="scheduling ATG appointments"
+            title="scheduling WAYFAST appointments"
             src="https://calendly.com/ariawayfast/wayfastdemo"
             width="100%"
             height="100%"

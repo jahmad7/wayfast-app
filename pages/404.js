@@ -10,7 +10,7 @@ function NotFound() {
   return (
     <div>
       <Head>
-        <title>ATG | 404</title>
+        <title>WAYFAST | 404</title>
         <link rel="icon" href="/logo.ico" />
         {/* Global Site Tag (gtag.js) - Google Analytics */}
         <script

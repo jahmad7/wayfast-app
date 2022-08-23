@@ -97,7 +97,6 @@ export default function Home() {
         </div>{" "}
         <div className=" flex justify-center">
           <a href="/" className="flex">
-            <span className="sr-only">ATG Pharma Inc</span>
             <Image
               src="/white_logo.svg"
               alt="Picture of the author"
